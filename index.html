@@ -367,6 +367,9 @@
                     <a href="#sense" class="toc-h2 toc-link" data-title="Sense">Sense</a>
                   </li>
                   <li>
+                    <a href="#skill" class="toc-h2 toc-link" data-title="Skill">Skill</a>
+                  </li>
+                  <li>
                     <a href="#spell" class="toc-h2 toc-link" data-title="Spell">Spell</a>
                   </li>
                   <li>
@@ -1709,7 +1712,7 @@
 
 <table><thead>
 <tr>
-<th>Field</th>
+<th>Attribute</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
@@ -1727,7 +1730,7 @@
 </span></code></pre></div>
 <table><thead>
 <tr>
-<th>Field</th>
+<th>Attribute</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
@@ -1778,7 +1781,7 @@
 </span></code></pre></div>
 <table><thead>
 <tr>
-<th>Field</th>
+<th>Attribute</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
@@ -1823,7 +1826,7 @@
 </span></code></pre></div>
 <table><thead>
 <tr>
-<th>Field</th>
+<th>Attribute</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
@@ -1883,7 +1886,7 @@
 </span></code></pre></div>
 <table><thead>
 <tr>
-<th>Field</th>
+<th>Attribute</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
@@ -1952,7 +1955,7 @@
 </span></code></pre></div>
 <table><thead>
 <tr>
-<th>Field</th>
+<th>Attribute</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
@@ -1985,7 +1988,7 @@
 </span></code></pre></div>
 <table><thead>
 <tr>
-<th>Field</th>
+<th>Attribute</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
@@ -2008,7 +2011,7 @@
 </span></code></pre></div>
 <table><thead>
 <tr>
-<th>Field</th>
+<th>Attribute</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
@@ -2386,16 +2389,11 @@
 
 <table><thead>
 <tr>
-<th>Field</th>
+<th>Attribute</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td><code>_id</code></td>
-<td><code>string</code></td>
-<td>The character&#39;s database identifier.</td>
-</tr>
 <tr>
 <td><code>abilityScores</code></td>
 <td><a href="#abilityscore"><code>AbilityScore[]</code></a></td>
@@ -2654,7 +2652,7 @@
 </span></code></pre></div>
 <table><thead>
 <tr>
-<th>Field</th>
+<th>Attribute</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
@@ -2679,7 +2677,7 @@
 
 <table><thead>
 <tr>
-<th>Field</th>
+<th>Attribute</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
@@ -2709,7 +2707,7 @@
 </span></code></pre></div>
 <table><thead>
 <tr>
-<th>Field</th>
+<th>Attribute</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
@@ -2732,7 +2730,7 @@
 </span></code></pre></div>
 <table><thead>
 <tr>
-<th>Field</th>
+<th>Attribute</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
@@ -2755,7 +2753,7 @@
 </span></code></pre></div>
 <table><thead>
 <tr>
-<th>Field</th>
+<th>Attribute</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
@@ -2769,6 +2767,52 @@
 <td><code>name</code></td>
 <td><code>string</code></td>
 <td>The name of the sense (e.g. <code>Darkvision</code>, <code>Blindsight</code>, etc.).</td>
+</tr>
+</tbody></table>
+<h2 id='skill'>Skill</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wis"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Perception"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dex"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"bonus"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"doubleProficiency"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stealth"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>abilityName</code></td>
+<td><code>string</code></td>
+<td>The name of the ability that this skill is based on. For 5e, use the abbreviated ability name.</td>
+</tr>
+<tr>
+<td><code>bonus</code></td>
+<td><code>number</code></td>
+<td>A bonus to add to the skill roll.</td>
+</tr>
+<tr>
+<td><code>doubleProficiency</code></td>
+<td><code>boolean</code></td>
+<td>Whether or not the character has double proficiency (a.k.a. expertise) in this skill.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>The name of the skill (e.g. <code>Perception</code>, <code>Stealth</code>, etc.).</td>
+</tr>
+<tr>
+<td><code>proficient</code></td>
+<td><code>boolean</code></td>
+<td>Whether or not the character is proficient in this skill.</td>
 </tr>
 </tbody></table>
 <h2 id='spell'>Spell</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -2817,7 +2861,7 @@
 </span></code></pre></div>
 <table><thead>
 <tr>
-<th>Field</th>
+<th>Attribute</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
@@ -2925,7 +2969,7 @@
 </span></code></pre></div>
 <table><thead>
 <tr>
-<th>Field</th>
+<th>Attribute</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
@@ -2955,7 +2999,7 @@
 
 <table><thead>
 <tr>
-<th>Field</th>
+<th>Attribute</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
