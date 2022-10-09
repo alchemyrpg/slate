@@ -1970,8 +1970,6 @@ When creating a character for 5d, note that SRD spells can simply be an object w
 }
 ```
 
-The `Class` object represents a character class and its associated level.
-
 | Attribute | Type     | Description                                                 |
 | --------- | -------- | ----------------------------------------------------------- |
 | `class`   | `string` | The name of the character class.                            |
@@ -1997,8 +1995,6 @@ The `Class` object represents a character class and its associated level.
 | ---------- | -------- | -------------------------------------------------------------- |
 | `distance` | `number` | The distance the character can move in this mode.              |
 | `mode`     | `string` | The name of the movement mode (e.g. `Walking`, `Fly`, `Swim`). |
-
-The `MovementMode` object represents a movement mode and its associated speed.
 
 ## Proficiency
 
