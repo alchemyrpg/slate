@@ -29,8 +29,6 @@ Alchemy Unlimited provides the ability to import NPCs into any universe that the
 
 ## Importing a single NPC
 
-To import a single NPC, create a JSON file with a single `Character` object in it.
-
 ```json
 {
   {
@@ -322,13 +320,9 @@ To import a single NPC, create a JSON file with a single `Character` object in i
 }
 ```
 
+To import a single NPC, create a JSON file with a single `Character` object in it.
+
 ## Importing multiple NPCs
-
-To import multiple NPCs, create a JSON file with an object that contains a `characters` property that contains an array of `Character` objects.
-
-| Field        | Type          | Description                      |
-| ------------ | ------------- | -------------------------------- |
-| `characters` | `Character[]` | An array of `Character` objects. |
 
 ```json
 {
@@ -1352,11 +1346,25 @@ To import multiple NPCs, create a JSON file with an object that contains a `char
 }
 ```
 
+To import multiple NPCs, create a JSON file with an object that contains a `characters` property that contains an array of `Character` objects.
+
+| Field        | Type          | Description                      |
+| ------------ | ------------- | -------------------------------- |
+| `characters` | `Character[]` | An array of `Character` objects. |
+
+
+
 ## AbilityScore
+
+```json
+```
 
 TODO
 
 ## Character
+
+```json
+```
 
 The `Character` object represents a player or non-player character on Alchemy.
 
@@ -1410,9 +1418,15 @@ TODO: Don't forget to add actions, spells, and items to the above table!
 
 ## CharacterDamageAdjustment
 
+```json
+```
+
 TODO
 
 ## Class
+
+```json
+```
 
 The `Class` object represents a character class and its associated level.
 
@@ -1423,12 +1437,21 @@ The `Class` object represents a character class and its associated level.
 
 ## MovementMode
 
+```json
+```
+
 The `MovementMode` object represents a movement mode and its associated speed.
 
 ## Proficiency
 
+```json
+```
+
 TODO
 
 ## SpellSlot
+
+```json
+```
 
 TODO
