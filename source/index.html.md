@@ -21,7 +21,9 @@ meta:
 
 # Introduction
 
-Welcome to the Alchemy developer documentation! Within this document you fill all of the information you need to integrate with Alchemy, including guides, API references, and more.
+Welcome to the Alchemy developer documentation! Within this document you will find all of the information you need to integrate with Alchemy, including guides, API references, and more.
+
+This documentation is open source. Please feel free to [open an issue](https://github.com/alchemyrpg/slate/issues/new?assignees=&labels=&template=bug.md) or [submit a pull request](https://github.com/alchemyrpg/slate/pulls) if you find any errors in the documentation or would like to add anything.
 
 # Character import
 
