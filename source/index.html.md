@@ -21,11 +21,11 @@ meta:
 
 # Introduction
 
-Welcome to the Alchemy developer documentation! Within this document you will find all of the information you need to integrate with Alchemy, including guides, API references, and more.
+Welcome to the Alchemy developer documentation! On this page, you will find all of the information you need to integrate with Alchemy, including guides, API references, and more.
 
 This documentation is open source. Please feel free to [open an issue](https://github.com/alchemyrpg/slate/issues/new?assignees=&labels=&template=bug.md) or [submit a pull request](https://github.com/alchemyrpg/slate/pulls) if you find any errors in the documentation or would like to add anything.
 
-# Character import
+# Character Import
 
 Alchemy Unlimited provides the ability to import NPCs into any universe that the user can edit. Today, this is a file-based import process, but we may open up an API for this in the future.
 
@@ -82,10 +82,6 @@ Alchemy Unlimited provides the ability to import NPCs into any universe that the
                         "name": "Club",
                         "savingThrow": {
                         }
-                    },
-                    "journalCommand": {
-                    },
-                    "skillCheck": {
                     },
                     "type": "custom-attack"
                 }
@@ -1350,25 +1346,189 @@ To import a single NPC, create a JSON file with a single [`Character`](#characte
 
 To import multiple NPCs, create a JSON file with an object that contains a `characters` property that contains an array of [`Character`](#character) objects.
 
-| Field        | Type          | Description                      |
-| ------------ | ------------- | -------------------------------- |
-| `characters` | `Character[]` | An array of `Character` objects. |
+| Field        | Type                        | Description                                    |
+| ------------ | --------------------------- | ---------------------------------------------- |
+| `characters` | [`Character[]`](#character) | An array of [`Character`](#character) objects. |
 
 ## AbilityScore
 
 ```json
-
+{
+  "name": "str",
+  "value": 11
+}
 ```
 
-TODO
+| Field   | Type     | Description                                                                                                                        |
+| ------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `name`  | `string` | The name of the ability score. For 5e, we use the abbreviation: str, dex, con, int, wis, cha.                                      |
+| `value` | `number` | The ability score's value. The modifier, if appropriate for the game system, will be calculated by the game system implementation. |
 
 ## Action
 
 ```json
-
+{
+  "description": "Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage plus 7 (2d6) poison damage.",
+  "name": "Bite",
+  "sortOrder": 0,
+  "steps": [
+    {
+      "attack": {
+        "ability": "str",
+        "crit": 20,
+        "damageRolls": [
+          {
+            "abilityName": "str",
+            "dice": "2d6",
+            "type": "Piercing"
+          },
+          {
+            "dice": "2d6",
+            "type": "Poison"
+          }
+        ],
+        "isProficient": true,
+        "isRanged": false,
+        "name": "Bite",
+        "rollsAttack": true,
+        "savingThrow": {}
+      },
+      "journalCommand": {},
+      "skillCheck": {},
+      "type": "custom-attack"
+    }
+  ]
+}
 ```
 
-TODO
+| Field         | Type                          | Description                                                                                                                                                                             |
+| ------------- | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `description` | `string`                      | The description of the action, visible to other players when this action is rolled into the journal.                                                                                    |
+| `name`        | `string`                      | The name of the action. This is visible in the actions panel when playing the character and is also used as the title for the card displayed in the journal when this action is rolled. |
+| `sortOrder`   | `number`                      | The order in which this action should be displayed in the actions panel.                                                                                                                |
+| `steps`       | [`ActionStep[]`](#actionstep) | An array of [`ActionStep`](#actionstep) objects that describe the steps to take when rolling this action.                                                                               |
+
+## ActionStep
+
+```json
+{
+  "attack": {
+    "crit": 20,
+    "isProficient": true,
+    "isRanged": false,
+    "name": "Frightful Presence",
+    "rollsAttack": false,
+    "savingThrow": {
+      "abilityName": "wis",
+      "difficultyClass": 16
+    }
+  },
+  "journalCommand": {},
+  "skillCheck": {},
+  "type": "custom-attack"
+}
+```
+
+| Field             | Type                                                    | Description                                                                                                                      |
+| ----------------- | ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `type`            | `string`                                                | The type of action step. Supported values are: `message`, `journal-command`, `custom-dice-roll`, `custom-attack`, `skill-check`. |
+| ` journalCommand` | [`ActionStepJournalCommand`](#actionstepjournalcommand) | If this is a `journal-command` ActionStep type, this contains the details of the command to execute.                             |
+| `diceRoll`        | [`ActionStepDamage[]`](#actionstepdamage)               | If this is a `custom-dice-roll` ActionStep type, this is the array of dice to roll.                                              |
+| `attack`          | [`ActionStepAttack`](#actionstepattack)                 | If this is a `custom-attack` ActionStep type, this is the attack to roll. This is only used by 5e characters.                    |
+| `skillCheck`      | [`ActionStepSkillCheck`](#actionstepskillcheck)         | If this is a `skill-check` ActionStep type, this contains the details of the skill check.                                        |
+
+## ActionStepAttack
+
+```json
+{
+  "crit": 20,
+  "isProficient": true,
+  "isRanged": false,
+  "name": "Frightful Presence",
+  "rollsAttack": false,
+  "savingThrow": {
+    "abilityName": "wis",
+    "difficultyClass": 16
+  }
+}
+```
+
+```json
+{
+  "ability": "str",
+  "crit": 20,
+  "damageRolls": [
+    {
+      "abilityName": "str",
+      "dice": "2d8",
+      "type": "Bludgeoning"
+    }
+  ],
+  "isProficient": true,
+  "isRanged": false,
+  "name": "Tail",
+  "rollsAttack": true
+}
+```
+
+| Field          | Type                                      | Description                                                                                                                       |
+| -------------- | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `ability`      | `string`                                  | The ability score to use for the attack roll.                                                                                     |
+| `bonus`        | `number`                                  | The bonus to add to the attack roll.                                                                                              |
+| `crit`         | `number`                                  | The number at which this attack is considered a critical hit.                                                                     |
+| `damageRolls`  | [`ActionStepDamage[]`](#actionstepdamage) | An array of [`ActionStepDamage`](#actionstepdamage) objects that describe the damage to roll.                                     |
+| `isProficient` | `boolean`                                 | Whether the character is proficient in the attack and thus whether to apply the character's proficiency bonus to the attack roll. |
+| `isRanged`     | `boolean`                                 | Whether this is a ranged attack.                                                                                                  |
+| `name`         | `string`                                  | The name of the attack.                                                                                                           |
+| `range`        | `number`                                  | The range of the attack.                                                                                                          |
+| `longRange`    | `number`                                  | The threshold for long range, or the point at which disadvantage is applied to the attack roll.                                   |
+| `rollsAttack`  | `boolean`                                 | Whether this attack rolls an attack roll.                                                                                         |
+| `savingThrow`  | [`SavingThrow`](#savingthrow)             | If this attack is a saving throw, this contains the details of the saving throw.                                                  |
+
+## ActionStepDamage
+
+```json
+{
+  "abilityName": "str",
+  "dice": "4d6",
+  "type": "Slashing"
+}
+```
+
+| Field         | Type     | Description                                                     |
+| ------------- | -------- | --------------------------------------------------------------- |
+| `abilityName` | `string` | The ability score to use for the damage roll.                   |
+| `bonus`       | `number` | An arbitrary bonus to add to the damage roll.                   |
+| `dice`        | `string` | The dice to roll for the damage.                                |
+| `type`        | `string` | The type of damage to be dealt (e.g. Slashing, Piercing, etc.). |
+
+## ActionStepJournalCommand
+
+```json
+{
+  "command": "/me",
+  "args": "glances dubiously in your direction."
+}
+```
+
+| Field     | Type     | Description                                                                                            |
+| --------- | -------- | ------------------------------------------------------------------------------------------------------ |
+| `command` | `string` | The journal slash command to execute. Currently available commands are `/me`, `/roll`, and `/whisper`. |
+| `args`    | `string` | The arguments to pass to the command.                                                                  |
+
+## ActionStepSkillCheck
+
+```json
+{
+  "rollModifer": "advantage",
+  "skillName": "Acrobatics"
+}
+```
+
+| Field          | Type     | Description                                                                                                 |
+| -------------- | -------- | ----------------------------------------------------------------------------------------------------------- |
+| `rollModifier` | `string` | The modifier to apply to the skill check. Currently available modifiers are `advantage` and `disadvantage`. |
+| `skillName`    | `string` | The name of a skill present on the character to roll a skill check for.                                     |
 
 ## Character
 
@@ -1728,7 +1888,6 @@ TODO
   "type": "Humanoid",
   "typeTags": ["Any Race"]
 }
-
 ```
 
 The [`Character`](#character) object represents a player or non-player character on Alchemy.
@@ -1763,7 +1922,6 @@ When creating a character for 5d, note that SRD spells can simply be an object w
 | `hitDice`               | `string`                                                    | The character's hit dice.                                                                                                                                                                                                                                                                                                                  |
 | `imageUri`              | `string`                                                    | A URI for the character's avatar or profile picture.                                                                                                                                                                                                                                                                                       |
 | `initiativeBonus`       | `number`                                                    | The character's total initiative bonus.                                                                                                                                                                                                                                                                                                    |
-| `items`                 | [`Item[]`](#item)                                           | The character's items.                                                                                                                                                                                                                                                                                                                     |
 | `isBackstoryPublic`     | `boolean`                                                   | Indicates whether the character's backstory should be visible to other players.                                                                                                                                                                                                                                                            |
 | `isSpellcaster`         | `boolean`                                                   | Indicates whether this character is a spellcaster or not. This is used to trigger the display of spellcasting features in the UI.                                                                                                                                                                                                          |
 | `legendary`             | `boolean`                                                   | Indicates whether this character is a legendary creature.                                                                                                                                                                                                                                                                                  |
@@ -1793,15 +1951,24 @@ When creating a character for 5d, note that SRD spells can simply be an object w
 ## CharacterDamageAdjustment
 
 ```json
-
+{
+  "condition": "Nonmagical",
+  "damageType": "Bludgeoning"
+}
 ```
 
-TODO
+| Field        | Type     | Description                                                                                                                          |
+| ------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `condition`  | `string` | The condition associated with the damage adjustment (e.g. silvered, magical, etc.). This is only displayed, not a mechanical effect. |
+| `damageType` | `string` | The name of the damage type to adjust (e.g. Slashing, Piercing, etc.).                                                               |
 
 ## Class
 
 ```json
-
+{
+  "class": "Wizard",
+  "level": 20
+}
 ```
 
 The `Class` object represents a character class and its associated level.
@@ -1810,14 +1977,6 @@ The `Class` object represents a character class and its associated level.
 | ------- | -------- | ----------------------------------------------------------- |
 | `class` | `string` | The name of the character class.                            |
 | `level` | `number` | The number of levels the character has earned in the class. |
-
-## Item
-
-```json
-
-```
-
-TODO
 
 ## MovementMode
 
@@ -1830,31 +1989,153 @@ The `MovementMode` object represents a movement mode and its associated speed.
 ## Proficiency
 
 ```json
-
+{
+  "distance": 40,
+  "mode": "Walking"
+}
 ```
 
-TODO
+```json
+{
+  "distance": 80,
+  "mode": "Fly"
+}
+```
+
+| Field      | Type     | Description                                                    |
+| ---------- | -------- | -------------------------------------------------------------- |
+| `distance` | `number` | The distance the character can move in this mode.              |
+| `mode`     | `string` | The name of the movement mode (e.g. `Walking`, `Fly`, `Swim`). |
+
+## SavingThrow
+
+```json
+{
+  "abilityName": "wis",
+  "difficultyClass": 16
+}
+```
+
+| Field             | Type     | Description                                                 |
+| ----------------- | -------- | ----------------------------------------------------------- |
+| `abilityName`     | `string` | The name of the ability that this saving throw is based on. |
+| `difficultyClass` | `number` | The difficulty class for this saving throw.                 |
 
 ## Sense
 
 ```json
-
+{
+  "distance": 120,
+  "name": "Darkvision"
+}
 ```
 
-TODO
+| Field      | Type     | Description                                                    |
+| ---------- | -------- | -------------------------------------------------------------- |
+| `distance` | `number` | The maximum distance at which the sense can be used.           |
+| `name`     | `string` | The name of the sense (e.g. `Darkvision`, `Blindsight`, etc.). |
 
 ## Spell
 
 ```json
-
+{
+  "canCastAtHigherLevel": true,
+  "castingTime": "1 Action",
+  "components": ["V", "S"],
+  "damage": [
+    {
+      "bonus": 1,
+      "dice": "1d4",
+      "type": "Force"
+    },
+    {
+      "bonus": 1,
+      "dice": "1d4",
+      "type": "Force"
+    },
+    {
+      "bonus": 1,
+      "dice": "1d4",
+      "type": "Force"
+    }
+  ],
+  "description": "You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range. A dart deals 1d4 + 1 force damage to its target. The darts all strike simultaneously, and you can direct them to hit one creature or several.\n\nAt Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the spell creates one more dart for each slot level above 1st.",
+  "duration": "Instantaneous",
+  "higherLevelDescription": "When you cast this spell using a spell slot of 2nd level or higher, the spell creates one more dart for each slot level above 1st.",
+  "higherLevels": [
+    {
+      "applyAtLevels": [2],
+      "damage": {
+        "bonus": 1,
+        "dice": "1d4",
+        "type": "Force"
+      },
+      "type": "per-slot"
+    }
+  ],
+  "level": 1,
+  "name": "Magic Missile",
+  "range": "120 ft.",
+  "rollsAttack": false,
+  "savingThrow": {},
+  "school": "Evocation",
+  "tags": ["Sorcerer", "Wizard"]
+}
 ```
 
-TODO
+| Field                    | Type                                      | Description                                                                                                                                                                                            |
+| ------------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `canBeCastAsRitual`      | `boolean`                                 | Whether or not the spell can be cast as a ritual.                                                                                                                                                      |
+| `canCastAtHigherLevel`   | `boolean`                                 | Whether or not the spell can be cast at higher levels.                                                                                                                                                 |
+| `castingTime`            | `string`                                  | The casting time for the spell (e.g. 1 Action, 10 minutes, etc.).                                                                                                                                      |
+| `components`             | `string[]`                                | An array of the components required to cast the spell. For 5e, the options are `V`, `S`, and `M` for verbal, somatic, and material, respectively                                                       |
+| `damage`                 | [`ActionStepDamage[]`](#actionstepdamage) | An array of damage dice rolls.                                                                                                                                                                         |
+| `description`            | `string`                                  | The description of the spell.                                                                                                                                                                          |
+| `duration`               | `string`                                  | The duration of the spell (e.g. Instantaneous, 1 minute, etc.).                                                                                                                                        |
+| `higherLevelDescription` | `string`                                  | The description of how the spell changes when cast at higher levels.                                                                                                                                   |
+| `higherLevels`           | [`SpellHigherLevel[]`](#spellhigherlevel) | An array of higher level spell effects.                                                                                                                                                                |
+| `level`                  | `number`                                  | The level of the spell.                                                                                                                                                                                |
+| `materials`              | `string`                                  | The material components required to cast the spell.                                                                                                                                                    |
+| `name`                   | `string`                                  | The name of the spell.                                                                                                                                                                                 |
+| `range`                  | `string`                                  | The range of the spell.                                                                                                                                                                                |
+| `requiresConcentration`  | `boolean`                                 | Whether or not the spell requires concentration to maintain effects.                                                                                                                                   |
+| `rollsAttack`            | `boolean`                                 | Whether or not the spell rolls an attack.                                                                                                                                                              |
+| `savingThrow`            | [`SavingThrow`](#savingthrow)             | The saving throw associated with the spell.                                                                                                                                                            |
+| `school`                 | `string`                                  | The school of magic the spell belongs to.                                                                                                                                                              |
+| `tags`                   | `string[]`                                | An array of tags associated with the spell. These can be custom or describe common spell metadata such as `Damage` to indicate that it deals damage or `Wizard` to indicate that it is a Wizard spell. |
+
+## SpellHigherLevel
+
+```json
+{
+  "applyAtLevels": [2],
+  "damage": {
+    "bonus": 1,
+    "dice": "1d4",
+    "type": "Force"
+  },
+  "type": "per-slot"
+}
+```
+
+| Field           | Type                                      | Description                                         |
+| --------------- | ----------------------------------------- | --------------------------------------------------- |
+| `applyAtLevels` | `number[]`                                | An array of levels at which this effect is applied. |
+| `damage`        | [`ActionStepDamage[]`](#actionstepdamage) | An array of damage dice rolls.                      |
+| `type`          | `string`                                  | The type of effect (e.g. `per-slot`, `per-level`).  |
 
 ## SpellSlot
 
 ```json
-
+{
+  "max": 4,
+  "remaining": 4
+}
 ```
 
-TODO
+Describes the max and remaining spell slots for a given level based on its position within an array.
+
+| Field       | Type     | Description                                  |
+| ----------- | -------- | -------------------------------------------- |
+| `max`       | `number` | The maximum number of spell slots available. |
+| `remaining` | `number` | The number of spell slots remaining.         |
