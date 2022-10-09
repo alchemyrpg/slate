@@ -409,288 +409,269 @@
 <h1 id='character-import'>Character Import</h1>
 <p>Alchemy Unlimited provides the ability to import NPCs into any universe that the user can edit. Today, this is a file-based import process, but we may open up an API for this in the future.</p>
 <h2 id='importing-a-single-npc'>Importing a single NPC</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"abilityScores"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"abilityScores"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dex"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"con"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wis"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cha"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Club"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sortOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"steps"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dex"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"con"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wis"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cha"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"attack"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"ability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"crit"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"damageRolls"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"dice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1d4"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bludgeoning"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"isProficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isRanged"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Club"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"sortOrder"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"steps"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"attack"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="nl">"ability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"crit"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"damageRolls"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                            </span><span class="p">{</span><span class="w">
-                                </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
-                                </span><span class="nl">"dice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1d4"</span><span class="p">,</span><span class="w">
-                                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bludgeoning"</span><span class="w">
-                            </span><span class="p">}</span><span class="w">
-                        </span><span class="p">],</span><span class="w">
-                        </span><span class="nl">"isProficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"isRanged"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Club"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"savingThrow"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="p">}</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom-attack"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">]</span><span class="w">
+            </span><span class="nl">"savingThrow"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom-attack"</span><span class="w">
         </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"alignment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Any Alignment"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"armorClass"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"challengeRating"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1/4"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"classes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"alignment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Any Alignment"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"armorClass"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"challengeRating"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1/4"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"classes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monster"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"currentHp"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"exp"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"hitDice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2d8"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"imageUri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.alchemyrpg.com/app-assets/humanoid-token.svg"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"initiativeBonus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isNPC"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isSpellcaster"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"maxHp"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"movementModes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Walking"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acolyte"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"proficiencies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Common"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"language"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"proficiencyBonus"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"race"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NPC"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Medium"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"skills"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dex"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acrobatics"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wis"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Animal Handling"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Arcana"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Athletics"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cha"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deception"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"History"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wis"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Insight"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cha"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Intimidation"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Investigation"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wis"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Medicine"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nature"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wis"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Perception"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cha"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Performance"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cha"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Persuasion"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Religion"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dex"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sleight of Hand"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dex"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stealth"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wis"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Survival"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"speed"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"spellFilters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Known"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"spellSlots"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"spellcastingAbility"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wis"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"spells"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"canCastAtHigherLevel"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"castingTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 Action"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"components"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"V"</span><span class="p">,</span><span class="w"> </span><span class="s2">"S"</span><span class="p">],</span><span class="w">
+      </span><span class="nl">"damage"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monster"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+          </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spl"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"dice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1d8"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Healing"</span><span class="w">
         </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"currentHp"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"exp"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"hitDice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2d8"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"imageUri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.alchemyrpg.com/app-assets/humanoid-token.svg"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"initiativeBonus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"isNPC"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"isSpellcaster"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"maxHp"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"movementModes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs.</span><span class="se">\n\n</span><span class="s2">At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Instantaneous"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"higherLevelDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"higherLevels"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Walking"</span><span class="w">
+          </span><span class="nl">"applyAtLevels"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="w">
+          </span><span class="nl">"damage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spl"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1d8"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Healing"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"per-slot"</span><span class="w">
         </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acolyte 3"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"proficiencies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cure Wounds"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"range"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Touch"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"savingThrow"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nl">"school"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Evocation"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Artificer"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Bard"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Cleric"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Druid"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Paladin"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Ranger"</span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"systemKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5e"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"textBlocks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"textBlocks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Common"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"language"</span><span class="w">
+          </span><span class="nl">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The acolyte is a 1st-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). The acolyte has following cleric spells prepared:</span><span class="se">\n</span><span class="s2">Cantrips (at will): light, sacred flame, thaumaturgy</span><span class="se">\n</span><span class="s2">1st level (3 slots): bless, cure wounds, sanctuary"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spellcasting"</span><span class="w">
         </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"proficiencyBonus"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"race"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NPC"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Medium"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"skills"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dex"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acrobatics"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wis"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Animal Handling"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Arcana"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"str"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Athletics"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cha"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deception"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"History"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wis"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Insight"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cha"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Intimidation"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Investigation"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wis"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Medicine"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nature"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wis"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Perception"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cha"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Performance"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cha"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Persuasion"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Religion"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dex"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sleight of Hand"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dex"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stealth"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wis"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Survival"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"proficient"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"speed"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"spellFilters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"Known"</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"spellSlots"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"spellcastingAbility"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wis"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"spells"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"canCastAtHigherLevel"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"castingTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 Action"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"components"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="s2">"V"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"S"</span><span class="w">
-            </span><span class="p">],</span><span class="w">
-            </span><span class="nl">"damage"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spl"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"dice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1d8"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Healing"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">],</span><span class="w">
-            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs.</span><span class="se">\n\n</span><span class="s2">At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Instantaneous"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"higherLevelDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"higherLevels"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"applyAtLevels"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                        </span><span class="mi">2</span><span class="w">
-                    </span><span class="p">],</span><span class="w">
-                    </span><span class="nl">"damage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="nl">"abilityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spl"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"dice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1d8"</span><span class="p">,</span><span class="w">
-                        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Healing"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"per-slot"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">],</span><span class="w">
-            </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cure Wounds"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"range"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Touch"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"savingThrow"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="nl">"school"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Evocation"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="s2">"Artificer"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"Bard"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"Cleric"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"Druid"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"Paladin"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"Ranger"</span><span class="w">
-            </span><span class="p">]</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"systemKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5e"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"textBlocks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"textBlocks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The acolyte is a 1st-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). The acolyte has following cleric spells prepared:</span><span class="se">\n</span><span class="s2">Cantrips (at will): light, sacred flame, thaumaturgy</span><span class="se">\n</span><span class="s2">1st level (3 slots): bless, cure wounds, sanctuary"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spellcasting"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">],</span><span class="w">
-            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Abilities"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Humanoid"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"typeTags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"Any Race"</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Abilities"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Humanoid"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"typeTags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Any Race"</span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>To import a single NPC, create a JSON file with a single <a href="#character"><code>Character</code></a> object in it.</p>
