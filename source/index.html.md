@@ -1,18 +1,14 @@
 ---
-title: API Reference
+title: Alchemy Developers
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
-  - javascript
+  - json
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
+  - <a href='https://github.com/alchemyrpg/slate'>❤️ Open-Source</a>
 
 includes:
-  - errors
+  - ogl
 
 search: true
 
@@ -20,226 +16,350 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: Documentation for the Kittn API
+    content: Alchemy developer documentation
 ---
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the Alchemy developer documentation! We don't have a lot available for developers today, but we hope that will change soon. :)
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+# Character Import
 
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
+Alchemy Unlimited provides the ability to import NPCs into a universe that you are an editor of. Today, this is a file-based import process, but we may open up an API for this in the future.
 
-# Authentication
+The import process only supports JSON.
 
-> To authorize, use this code:
+## Importing a single NPC
 
-```ruby
-require 'kittn'
+To import a single NPC, create a JSON file with a single `Character` object in it.
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
+### Character
 
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| `name` | `string` | The name of the character. |
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  {
+    "abilityScores": [
+        {
+            "name": "str",
+            "value": 10
+        },
+        {
+            "name": "dex",
+            "value": 10
+        },
+        {
+            "name": "con",
+            "value": 10
+        },
+        {
+            "name": "int",
+            "value": 10
+        },
+        {
+            "name": "wis",
+            "value": 14
+        },
+        {
+            "name": "cha",
+            "value": 11
+        }
+    ],
+    "actions": [
+        {
+            "description": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage.",
+            "name": "Club",
+            "sortOrder": 0,
+            "steps": [
+                {
+                    "attack": {
+                        "ability": "str",
+                        "crit": 20,
+                        "damageRolls": [
+                            {
+                                "abilityName": "str",
+                                "dice": "1d4",
+                                "type": "Bludgeoning"
+                            }
+                        ],
+                        "isProficient": true,
+                        "isRanged": false,
+                        "name": "Club",
+                        "savingThrow": {
+                        }
+                    },
+                    "journalCommand": {
+                    },
+                    "skillCheck": {
+                    },
+                    "type": "custom-attack"
+                }
+            ]
+        }
+    ],
+    "alignment": "Any Alignment",
+    "armorClass": 10,
+    "challengeRating": "1/4",
+    "classes": [
+        {
+            "class": "Monster",
+            "level": 1
+        }
+    ],
+    "currentHp": 9,
+    "exp": 50,
+    "hitDice": "2d8",
+    "imageUri": "https://cdn.alchemyrpg.com/app-assets/humanoid-token.svg",
+    "initiativeBonus": 0,
+    "isNPC": true,
+    "isSpellcaster": true,
+    "maxHp": 9,
+    "movementModes": [
+        {
+            "distance": 30,
+            "mode": "Walking"
+        }
+    ],
+    "name": "Acolyte 3",
+    "proficiencies": [
+        {
+            "name": "Common",
+            "type": "language"
+        }
+    ],
+    "proficiencyBonus": 2,
+    "race": "NPC",
+    "size": "Medium",
+    "skills": [
+        {
+            "abilityName": "dex",
+            "name": "Acrobatics",
+            "proficient": false
+        },
+        {
+            "abilityName": "wis",
+            "name": "Animal Handling",
+            "proficient": false
+        },
+        {
+            "abilityName": "int",
+            "name": "Arcana",
+            "proficient": false
+        },
+        {
+            "abilityName": "str",
+            "name": "Athletics",
+            "proficient": false
+        },
+        {
+            "abilityName": "cha",
+            "name": "Deception",
+            "proficient": false
+        },
+        {
+            "abilityName": "int",
+            "name": "History",
+            "proficient": false
+        },
+        {
+            "abilityName": "wis",
+            "name": "Insight",
+            "proficient": false
+        },
+        {
+            "abilityName": "cha",
+            "name": "Intimidation",
+            "proficient": false
+        },
+        {
+            "abilityName": "int",
+            "name": "Investigation",
+            "proficient": false
+        },
+        {
+            "abilityName": "wis",
+            "name": "Medicine",
+            "proficient": true
+        },
+        {
+            "abilityName": "int",
+            "name": "Nature",
+            "proficient": false
+        },
+        {
+            "abilityName": "wis",
+            "name": "Perception",
+            "proficient": false
+        },
+        {
+            "abilityName": "cha",
+            "name": "Performance",
+            "proficient": false
+        },
+        {
+            "abilityName": "cha",
+            "name": "Persuasion",
+            "proficient": false
+        },
+        {
+            "abilityName": "int",
+            "name": "Religion",
+            "proficient": true
+        },
+        {
+            "abilityName": "dex",
+            "name": "Sleight of Hand",
+            "proficient": false
+        },
+        {
+            "abilityName": "dex",
+            "name": "Stealth",
+            "proficient": false
+        },
+        {
+            "abilityName": "wis",
+            "name": "Survival",
+            "proficient": false
+        }
+    ],
+    "speed": 30,
+    "spellFilters": [
+        "Known"
+    ],
+    "spellSlots": [
+        {
+            "max": 3,
+            "remaining": 3
+        },
+        {
+            "max": 0,
+            "remaining": 0
+        },
+        {
+            "max": 0,
+            "remaining": 0
+        },
+        {
+            "max": 0,
+            "remaining": 0
+        },
+        {
+            "max": 0,
+            "remaining": 0
+        },
+        {
+            "max": 0,
+            "remaining": 0
+        },
+        {
+            "max": 0,
+            "remaining": 0
+        },
+        {
+            "max": 0,
+            "remaining": 0
+        }
+    ],
+    "spellcastingAbility": "wis",
+    "spells": [
+        {
+            "canCastAtHigherLevel": true,
+            "castingTime": "1 Action",
+            "components": [
+                "V",
+                "S"
+            ],
+            "damage": [
+                {
+                    "abilityName": "spl",
+                    "dice": "1d8",
+                    "type": "Healing"
+                }
+            ],
+            "description": "A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs.\n\nAt Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st",
+            "duration": "Instantaneous",
+            "higherLevelDescription": "When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st",
+            "higherLevels": [
+                {
+                    "applyAtLevels": [
+                        2
+                    ],
+                    "damage": {
+                        "abilityName": "spl",
+                        "dice": "1d8",
+                        "type": "Healing"
+                    },
+                    "type": "per-slot"
+                }
+            ],
+            "level": 1,
+            "name": "Cure Wounds",
+            "range": "Touch",
+            "savingThrow": {
+            },
+            "school": "Evocation",
+            "tags": [
+                "Artificer",
+                "Bard",
+                "Cleric",
+                "Druid",
+                "Paladin",
+                "Ranger"
+            ]
+        }
+    ],
+    "systemKey": "5e",
+    "textBlocks": [
+        {
+            "textBlocks": [
+                {
+                    "body": "The acolyte is a 1st-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). The acolyte has following cleric spells prepared:\nCantrips (at will): light, sacred flame, thaumaturgy\n1st level (3 slots): bless, cure wounds, sanctuary",
+                    "title": "Spellcasting"
+                }
+            ],
+            "title": "Abilities"
+        }
+    ],
+    "type": "Humanoid",
+    "typeTags": [
+        "Any Race"
+    ]
 }
 ```
 
-This endpoint retrieves a specific kitten.
+## Importing Multiple NPCs
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+To import multiple NPCs, create a JSON file with an object that contains a `characters` property that contains an array of `Character` objects.
 
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -X DELETE \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| `characters` | `Character[]` | An array of `Character` objects. |
 
 ```json
 {
-  "id": 2,
-  "deleted" : ":("
+  characters: [
+    {
+      name: "Acolyte"
+    },
+    {
+      name: "Adept"
+    }
+  ]
 }
 ```
 
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
-
+```json
+{
+  characters: [
+    {
+      name: "Acolyte"
+    },
+    {
+      name: "Cultist"
+    }
+  ]
+}
+```
