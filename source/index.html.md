@@ -33,288 +33,269 @@ Alchemy Unlimited provides the ability to import NPCs into any universe that the
 
 ```json
 {
-  {
-    "abilityScores": [
+  "abilityScores": [
+    {
+      "name": "str",
+      "value": 10
+    },
+    {
+      "name": "dex",
+      "value": 10
+    },
+    {
+      "name": "con",
+      "value": 10
+    },
+    {
+      "name": "int",
+      "value": 10
+    },
+    {
+      "name": "wis",
+      "value": 14
+    },
+    {
+      "name": "cha",
+      "value": 11
+    }
+  ],
+  "actions": [
+    {
+      "description": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage.",
+      "name": "Club",
+      "sortOrder": 0,
+      "steps": [
         {
-            "name": "str",
-            "value": 10
-        },
-        {
-            "name": "dex",
-            "value": 10
-        },
-        {
-            "name": "con",
-            "value": 10
-        },
-        {
-            "name": "int",
-            "value": 10
-        },
-        {
-            "name": "wis",
-            "value": 14
-        },
-        {
-            "name": "cha",
-            "value": 11
-        }
-    ],
-    "actions": [
-        {
-            "description": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage.",
+          "attack": {
+            "ability": "str",
+            "crit": 20,
+            "damageRolls": [
+              {
+                "abilityName": "str",
+                "dice": "1d4",
+                "type": "Bludgeoning"
+              }
+            ],
+            "isProficient": true,
+            "isRanged": false,
             "name": "Club",
-            "sortOrder": 0,
-            "steps": [
-                {
-                    "attack": {
-                        "ability": "str",
-                        "crit": 20,
-                        "damageRolls": [
-                            {
-                                "abilityName": "str",
-                                "dice": "1d4",
-                                "type": "Bludgeoning"
-                            }
-                        ],
-                        "isProficient": true,
-                        "isRanged": false,
-                        "name": "Club",
-                        "savingThrow": {
-                        }
-                    },
-                    "type": "custom-attack"
-                }
-            ]
+            "savingThrow": {}
+          },
+          "type": "custom-attack"
         }
-    ],
-    "alignment": "Any Alignment",
-    "armorClass": 10,
-    "challengeRating": "1/4",
-    "classes": [
+      ]
+    }
+  ],
+  "alignment": "Any Alignment",
+  "armorClass": 10,
+  "challengeRating": "1/4",
+  "classes": [
+    {
+      "class": "Monster",
+      "level": 1
+    }
+  ],
+  "currentHp": 9,
+  "exp": 50,
+  "hitDice": "2d8",
+  "imageUri": "https://cdn.alchemyrpg.com/app-assets/humanoid-token.svg",
+  "initiativeBonus": 0,
+  "isNPC": true,
+  "isSpellcaster": true,
+  "maxHp": 9,
+  "movementModes": [
+    {
+      "distance": 30,
+      "mode": "Walking"
+    }
+  ],
+  "name": "Acolyte",
+  "proficiencies": [
+    {
+      "name": "Common",
+      "type": "language"
+    }
+  ],
+  "proficiencyBonus": 2,
+  "race": "NPC",
+  "size": "Medium",
+  "skills": [
+    {
+      "abilityName": "dex",
+      "name": "Acrobatics",
+      "proficient": false
+    },
+    {
+      "abilityName": "wis",
+      "name": "Animal Handling",
+      "proficient": false
+    },
+    {
+      "abilityName": "int",
+      "name": "Arcana",
+      "proficient": false
+    },
+    {
+      "abilityName": "str",
+      "name": "Athletics",
+      "proficient": false
+    },
+    {
+      "abilityName": "cha",
+      "name": "Deception",
+      "proficient": false
+    },
+    {
+      "abilityName": "int",
+      "name": "History",
+      "proficient": false
+    },
+    {
+      "abilityName": "wis",
+      "name": "Insight",
+      "proficient": false
+    },
+    {
+      "abilityName": "cha",
+      "name": "Intimidation",
+      "proficient": false
+    },
+    {
+      "abilityName": "int",
+      "name": "Investigation",
+      "proficient": false
+    },
+    {
+      "abilityName": "wis",
+      "name": "Medicine",
+      "proficient": true
+    },
+    {
+      "abilityName": "int",
+      "name": "Nature",
+      "proficient": false
+    },
+    {
+      "abilityName": "wis",
+      "name": "Perception",
+      "proficient": false
+    },
+    {
+      "abilityName": "cha",
+      "name": "Performance",
+      "proficient": false
+    },
+    {
+      "abilityName": "cha",
+      "name": "Persuasion",
+      "proficient": false
+    },
+    {
+      "abilityName": "int",
+      "name": "Religion",
+      "proficient": true
+    },
+    {
+      "abilityName": "dex",
+      "name": "Sleight of Hand",
+      "proficient": false
+    },
+    {
+      "abilityName": "dex",
+      "name": "Stealth",
+      "proficient": false
+    },
+    {
+      "abilityName": "wis",
+      "name": "Survival",
+      "proficient": false
+    }
+  ],
+  "speed": 30,
+  "spellFilters": ["Known"],
+  "spellSlots": [
+    {
+      "max": 3,
+      "remaining": 3
+    },
+    {
+      "max": 0,
+      "remaining": 0
+    },
+    {
+      "max": 0,
+      "remaining": 0
+    },
+    {
+      "max": 0,
+      "remaining": 0
+    },
+    {
+      "max": 0,
+      "remaining": 0
+    },
+    {
+      "max": 0,
+      "remaining": 0
+    },
+    {
+      "max": 0,
+      "remaining": 0
+    },
+    {
+      "max": 0,
+      "remaining": 0
+    }
+  ],
+  "spellcastingAbility": "wis",
+  "spells": [
+    {
+      "canCastAtHigherLevel": true,
+      "castingTime": "1 Action",
+      "components": ["V", "S"],
+      "damage": [
         {
-            "class": "Monster",
-            "level": 1
+          "abilityName": "spl",
+          "dice": "1d8",
+          "type": "Healing"
         }
-    ],
-    "currentHp": 9,
-    "exp": 50,
-    "hitDice": "2d8",
-    "imageUri": "https://cdn.alchemyrpg.com/app-assets/humanoid-token.svg",
-    "initiativeBonus": 0,
-    "isNPC": true,
-    "isSpellcaster": true,
-    "maxHp": 9,
-    "movementModes": [
+      ],
+      "description": "A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs.\n\nAt Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st",
+      "duration": "Instantaneous",
+      "higherLevelDescription": "When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st",
+      "higherLevels": [
         {
-            "distance": 30,
-            "mode": "Walking"
+          "applyAtLevels": [2],
+          "damage": {
+            "abilityName": "spl",
+            "dice": "1d8",
+            "type": "Healing"
+          },
+          "type": "per-slot"
         }
-    ],
-    "name": "Acolyte 3",
-    "proficiencies": [
+      ],
+      "level": 1,
+      "name": "Cure Wounds",
+      "range": "Touch",
+      "savingThrow": {},
+      "school": "Evocation",
+      "tags": ["Artificer", "Bard", "Cleric", "Druid", "Paladin", "Ranger"]
+    }
+  ],
+  "systemKey": "5e",
+  "textBlocks": [
+    {
+      "textBlocks": [
         {
-            "name": "Common",
-            "type": "language"
+          "body": "The acolyte is a 1st-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). The acolyte has following cleric spells prepared:\nCantrips (at will): light, sacred flame, thaumaturgy\n1st level (3 slots): bless, cure wounds, sanctuary",
+          "title": "Spellcasting"
         }
-    ],
-    "proficiencyBonus": 2,
-    "race": "NPC",
-    "size": "Medium",
-    "skills": [
-        {
-            "abilityName": "dex",
-            "name": "Acrobatics",
-            "proficient": false
-        },
-        {
-            "abilityName": "wis",
-            "name": "Animal Handling",
-            "proficient": false
-        },
-        {
-            "abilityName": "int",
-            "name": "Arcana",
-            "proficient": false
-        },
-        {
-            "abilityName": "str",
-            "name": "Athletics",
-            "proficient": false
-        },
-        {
-            "abilityName": "cha",
-            "name": "Deception",
-            "proficient": false
-        },
-        {
-            "abilityName": "int",
-            "name": "History",
-            "proficient": false
-        },
-        {
-            "abilityName": "wis",
-            "name": "Insight",
-            "proficient": false
-        },
-        {
-            "abilityName": "cha",
-            "name": "Intimidation",
-            "proficient": false
-        },
-        {
-            "abilityName": "int",
-            "name": "Investigation",
-            "proficient": false
-        },
-        {
-            "abilityName": "wis",
-            "name": "Medicine",
-            "proficient": true
-        },
-        {
-            "abilityName": "int",
-            "name": "Nature",
-            "proficient": false
-        },
-        {
-            "abilityName": "wis",
-            "name": "Perception",
-            "proficient": false
-        },
-        {
-            "abilityName": "cha",
-            "name": "Performance",
-            "proficient": false
-        },
-        {
-            "abilityName": "cha",
-            "name": "Persuasion",
-            "proficient": false
-        },
-        {
-            "abilityName": "int",
-            "name": "Religion",
-            "proficient": true
-        },
-        {
-            "abilityName": "dex",
-            "name": "Sleight of Hand",
-            "proficient": false
-        },
-        {
-            "abilityName": "dex",
-            "name": "Stealth",
-            "proficient": false
-        },
-        {
-            "abilityName": "wis",
-            "name": "Survival",
-            "proficient": false
-        }
-    ],
-    "speed": 30,
-    "spellFilters": [
-        "Known"
-    ],
-    "spellSlots": [
-        {
-            "max": 3,
-            "remaining": 3
-        },
-        {
-            "max": 0,
-            "remaining": 0
-        },
-        {
-            "max": 0,
-            "remaining": 0
-        },
-        {
-            "max": 0,
-            "remaining": 0
-        },
-        {
-            "max": 0,
-            "remaining": 0
-        },
-        {
-            "max": 0,
-            "remaining": 0
-        },
-        {
-            "max": 0,
-            "remaining": 0
-        },
-        {
-            "max": 0,
-            "remaining": 0
-        }
-    ],
-    "spellcastingAbility": "wis",
-    "spells": [
-        {
-            "canCastAtHigherLevel": true,
-            "castingTime": "1 Action",
-            "components": [
-                "V",
-                "S"
-            ],
-            "damage": [
-                {
-                    "abilityName": "spl",
-                    "dice": "1d8",
-                    "type": "Healing"
-                }
-            ],
-            "description": "A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs.\n\nAt Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st",
-            "duration": "Instantaneous",
-            "higherLevelDescription": "When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st",
-            "higherLevels": [
-                {
-                    "applyAtLevels": [
-                        2
-                    ],
-                    "damage": {
-                        "abilityName": "spl",
-                        "dice": "1d8",
-                        "type": "Healing"
-                    },
-                    "type": "per-slot"
-                }
-            ],
-            "level": 1,
-            "name": "Cure Wounds",
-            "range": "Touch",
-            "savingThrow": {
-            },
-            "school": "Evocation",
-            "tags": [
-                "Artificer",
-                "Bard",
-                "Cleric",
-                "Druid",
-                "Paladin",
-                "Ranger"
-            ]
-        }
-    ],
-    "systemKey": "5e",
-    "textBlocks": [
-        {
-            "textBlocks": [
-                {
-                    "body": "The acolyte is a 1st-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). The acolyte has following cleric spells prepared:\nCantrips (at will): light, sacred flame, thaumaturgy\n1st level (3 slots): bless, cure wounds, sanctuary",
-                    "title": "Spellcasting"
-                }
-            ],
-            "title": "Abilities"
-        }
-    ],
-    "type": "Humanoid",
-    "typeTags": [
-        "Any Race"
-    ]
+      ],
+      "title": "Abilities"
+    }
+  ],
+  "type": "Humanoid",
+  "typeTags": ["Any Race"]
 }
 ```
 
