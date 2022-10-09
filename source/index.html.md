@@ -320,7 +320,7 @@ Alchemy Unlimited provides the ability to import NPCs into any universe that the
 }
 ```
 
-To import a single NPC, create a JSON file with a single `Character` object in it.
+To import a single NPC, create a JSON file with a single [`Character`](#character) object in it.
 
 ## Importing multiple NPCs
 
@@ -1346,7 +1346,7 @@ To import a single NPC, create a JSON file with a single `Character` object in i
 }
 ```
 
-To import multiple NPCs, create a JSON file with an object that contains a `characters` property that contains an array of `Character` objects.
+To import multiple NPCs, create a JSON file with an object that contains a `characters` property that contains an array of [`Character`](#character) objects.
 
 | Field        | Type          | Description                      |
 | ------------ | ------------- | -------------------------------- |
@@ -1366,9 +1366,9 @@ TODO
 ```json
 ```
 
-The `Character` object represents a player or non-player character on Alchemy.
+The [`Character`](#character) object represents a player or non-player character on Alchemy.
 
-When creating a character for 5d, note that SRD spells can simply be an object with the `name` property set to the name of the spell rather than a full `Spell` object. If the spell name matches an existing SRD spell (case-insensitive), it will be added to the character.
+When creating a character for 5d, note that SRD spells can simply be an object with the `name` property set to the name of the spell rather than a full [`Spell`](#spell) object. If the spell name matches an existing SRD spell (case-insensitive), it will be added to the character.
 
 | Field                   | Type                                                        | Description                                                                                                                                                                       |
 | ----------------------- | ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
