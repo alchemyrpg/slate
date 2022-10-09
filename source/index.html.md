@@ -1352,11 +1352,18 @@ To import multiple NPCs, create a JSON file with an object that contains a `char
 | ------------ | ------------- | -------------------------------- |
 | `characters` | `Character[]` | An array of `Character` objects. |
 
-
-
 ## AbilityScore
 
 ```json
+
+```
+
+TODO
+
+## Action
+
+```json
+
 ```
 
 TODO
@@ -1364,61 +1371,72 @@ TODO
 ## Character
 
 ```json
+
 ```
 
 The [`Character`](#character) object represents a player or non-player character on Alchemy.
 
 When creating a character for 5d, note that SRD spells can simply be an object with the `name` property set to the name of the spell rather than a full [`Spell`](#spell) object. If the spell name matches an existing SRD spell (case-insensitive), it will be added to the character.
 
-| Field                   | Type                                                        | Description                                                                                                                                                                       |
-| ----------------------- | ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `_id`                   | `string`                                                    | The character's database identifier.                                                                                                                                              |
-| `abilityScores`         | [`AbilityScore[]`](#abilityscore)                           | The character's ability scores.                                                                                                                                                   |
-| `age`                   | `string`                                                    | The character's age.                                                                                                                                                              |
-| `alignment`             | `string`                                                    | The character's alignment.                                                                                                                                                        |
-| `armorClass`            | `number`                                                    | The character's armor class including all bonuses.                                                                                                                                |
-| `armorType`             | `string`                                                    | The character's armor type.                                                                                                                                                       |
-| `appearance`            | `string`                                                    | A long description of the character's appearance.                                                                                                                                 |
-| `classes`               | [`Class[]`](#class)                                         | An array of character classes and their associated levels.                                                                                                                        |
-| `copper`                | `number`                                                    | The number of copper coins carried by the character.                                                                                                                              |
-| `currentHp`             | `number`                                                    | The character's current hit points.                                                                                                                                               |
-| `damageVulnerabilities` | [`CharacterDamageAdjustment[]`](#characterdamageadjustment) | A non-player character's damage vulnerabilities.                                                                                                                                  |
-| `electrum`              | `number`                                                    | The number of electrum coins carried by the character.                                                                                                                            |
-| `eyes`                  | `string`                                                    | The character's eye color.                                                                                                                                                        |
-| `exp`                   | `number`                                                    | The amount of experience points that the character has earned.                                                                                                                    |
-| `gold`                  | `number`                                                    | The number of gold coins carried by the character.                                                                                                                                |
-| `hair`                  | `string`                                                    | The character's hair color.                                                                                                                                                       |
-| `height`                | `string`                                                    | The character's height.                                                                                                                                                           |
-| `imageUri`              | `string`                                                    | A URI for the character's avatar or profile picture.                                                                                                                              |
-| `initiativeBonus`       | `number`                                                    | The character's total initiative bonus.                                                                                                                                           |
-| `isBackstoryPublic`     | `boolean`                                                   | Indicates whether the character's backstory should be visible to other players.                                                                                                   |
-| `isSpellcaster`         | `boolean`                                                   | Indicates whether this character is a spellcaster or not. This is used to trigger the display of spellcasting features in the UI.                                                 |
-| `maxHp`                 | `number`                                                    | The character's maximum hit points.                                                                                                                                               |
-| `movementModes`         | [`MovementMode[]`](#movementmode)                           | An array of movement modes and their associated speeds.                                                                                                                           |
-| `name`                  | `string`                                                    | The character's name.                                                                                                                                                             |
-| `platinum`              | `number`                                                    | The number of platinum coins carried by the character.                                                                                                                            |
-| `proficiencies`         | [`Proficiency[]`](#proficiency)                             | An array of skills, languages, saving throws, etc. that the character is proficient in.                                                                                           |
-| `proficiencyBonus`      | `number`                                                    | The character's proficiency bonus (5e).                                                                                                                                           |
-| `race`                  | `string`                                                    | The character's race, lineage, folk, etc.                                                                                                                                         |
-| `silver`                | `number`                                                    | The number of copper coins carried by the character.                                                                                                                              |
-| `skills`                | [`Skill[]`](#skill)                                         | The character's skills.                                                                                                                                                           |
-| `skin`                  | `string`                                                    | The color of the character's skin.                                                                                                                                                |
-| `size`                  | `string`                                                    | The character's size.                                                                                                                                                             |
-| `speed`                 | `number`                                                    | The player character's movement speed per turn.                                                                                                                                   |
-| `spellcastingAbility`   | `string`                                                    | The character's spellcasting ability name (abbreviated as int, e.g.).                                                                                                             |
-| `spellFilters`          | `string[]`                                                  | An array of filters to be applied to the character's spellbook whenever it is displayed. These will be overwritten anytime the spellbook is filtered.                             |
-| `spellSlots`            | [`SpellSlot[]`](#spellslot)                                 | Information about the spell slots for this character.                                                                                                                             |
-| `systemKey`             | `string`                                                    | The key for the game system that the character is built for (e.g. '5e').                                                                                                          |
-| `textBlocks`            | [`TextBlockSection[]`](#textblocksection)                   | General purpose text about the character broken into sections of title and body text blocks. Things like class features, racial features, and background features are found here. |
-| `type`                  | `string`                                                    | The non-player character's type (e.g. Humanoid, Giant, etc.).                                                                                                                     |
-| `typeTags`              | `string[]`                                                  | An array of type tags (or subtypes) applicable to the non-player character (e.g. goblinoid).                                                                                      |
-| `weight`                | `string`                                                    | The character's weight.                                                                                                                                                           |
-
-TODO: Don't forget to add actions, spells, and items to the above table!
+| Field                   | Type                                                        | Description                                                                                                                                                                                                                                                                                                                                |
+| ----------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `_id`                   | `string`                                                    | The character's database identifier.                                                                                                                                                                                                                                                                                                       |
+| `abilityScores`         | [`AbilityScore[]`](#abilityscore)                           | The character's ability scores.                                                                                                                                                                                                                                                                                                            |
+| `actions`               | [`Action[]`](#action)                                       | The character's actions.                                                                                                                                                                                                                                                                                                                   |
+| `age`                   | `string`                                                    | The character's age.                                                                                                                                                                                                                                                                                                                       |
+| `alignment`             | `string`                                                    | The character's alignment.                                                                                                                                                                                                                                                                                                                 |
+| `armorClass`            | `number`                                                    | The character's armor class including all bonuses.                                                                                                                                                                                                                                                                                         |
+| `armorType`             | `string`                                                    | The character's armor type.                                                                                                                                                                                                                                                                                                                |
+| `appearance`            | `string`                                                    | A long description of the character's appearance.                                                                                                                                                                                                                                                                                          |
+| `challengeRating`       | `string`                                                    | A non-player character's challenge rating.                                                                                                                                                                                                                                                                                                 |
+| `classes`               | [`Class[]`](#class)                                         | An array of character classes and their associated levels.                                                                                                                                                                                                                                                                                 |
+| `conditionImmunities`   | `string[]`                                                  | A non-player character's condition immunities.                                                                                                                                                                                                                                                                                             |
+| `copper`                | `number`                                                    | The number of copper coins carried by the character.                                                                                                                                                                                                                                                                                       |
+| `currentHp`             | `number`                                                    | The character's current hit points.                                                                                                                                                                                                                                                                                                        |
+| `damageImmunities`      | [`CharacterDamageAdjustment[]`](#characterdamageadjustment) | A non-player character's damage immunities.                                                                                                                                                                                                                                                                                                |
+| `damageResistances`     | [`CharacterDamageAdjustment[]`](#characterdamageadjustment) | A non-player character's damage resistances.                                                                                                                                                                                                                                                                                               |
+| `damageVulnerabilities` | [`CharacterDamageAdjustment[]`](#characterdamageadjustment) | A non-player character's damage vulnerabilities.                                                                                                                                                                                                                                                                                           |
+| `description`           | Markdown `string`                                           | An [Alchemy-flavored markdown](https://app.alchemyrpg.com/universe/6260df75b0b47dc841b01d56/article/62faeeae89d4b645be22f85c) description of the character.                                                                                                                                                                                |
+| `electrum`              | `number`                                                    | The number of electrum coins carried by the character.                                                                                                                                                                                                                                                                                     |
+| `eyes`                  | `string`                                                    | The character's eye color.                                                                                                                                                                                                                                                                                                                 |
+| `exp`                   | `number`                                                    | The amount of experience points that the character has earned.                                                                                                                                                                                                                                                                             |
+| `gold`                  | `number`                                                    | The number of gold coins carried by the character.                                                                                                                                                                                                                                                                                         |
+| `hair`                  | `string`                                                    | The character's hair color.                                                                                                                                                                                                                                                                                                                |
+| `height`                | `string`                                                    | The character's height.                                                                                                                                                                                                                                                                                                                    |
+| `hitDice`               | `string`                                                    | The character's hit dice.                                                                                                                                                                                                                                                                                                                  |
+| `imageUri`              | `string`                                                    | A URI for the character's avatar or profile picture.                                                                                                                                                                                                                                                                                       |
+| `initiativeBonus`       | `number`                                                    | The character's total initiative bonus.                                                                                                                                                                                                                                                                                                    |
+| `items`                 | [`Item[]`](#item)                                           | The character's items.                                                                                                                                                                                                                                                                                                                     |
+| `isBackstoryPublic`     | `boolean`                                                   | Indicates whether the character's backstory should be visible to other players.                                                                                                                                                                                                                                                            |
+| `isSpellcaster`         | `boolean`                                                   | Indicates whether this character is a spellcaster or not. This is used to trigger the display of spellcasting features in the UI.                                                                                                                                                                                                          |
+| `legendary`             | `boolean`                                                   | Indicates whether this character is a legendary creature.                                                                                                                                                                                                                                                                                  |
+| `maxHp`                 | `number`                                                    | The character's maximum hit points.                                                                                                                                                                                                                                                                                                        |
+| `movementModes`         | [`MovementMode[]`](#movementmode)                           | An array of movement modes and their associated speeds.                                                                                                                                                                                                                                                                                    |
+| `name`                  | `string`                                                    | The character's name.                                                                                                                                                                                                                                                                                                                      |
+| `platinum`              | `number`                                                    | The number of platinum coins carried by the character.                                                                                                                                                                                                                                                                                     |
+| `proficiencies`         | [`Proficiency[]`](#proficiency)                             | An array of skills, languages, saving throws, etc. that the character is proficient in.                                                                                                                                                                                                                                                    |
+| `proficiencyBonus`      | `number`                                                    | The character's proficiency bonus (5e).                                                                                                                                                                                                                                                                                                    |
+| `race`                  | `string`                                                    | The character's race, lineage, folk, etc.                                                                                                                                                                                                                                                                                                  |
+| `senses`                | [`Sense[]`](#sense)                                         | A non-player character's senses.                                                                                                                                                                                                                                                                                                           |
+| `silver`                | `number`                                                    | The number of copper coins carried by the character.                                                                                                                                                                                                                                                                                       |
+| `skills`                | [`Skill[]`](#skill)                                         | The character's skills.                                                                                                                                                                                                                                                                                                                    |
+| `skin`                  | `string`                                                    | The color of the character's skin.                                                                                                                                                                                                                                                                                                         |
+| `size`                  | `string`                                                    | The character's size.                                                                                                                                                                                                                                                                                                                      |
+| `speed`                 | `number`                                                    | The player character's movement speed per turn.                                                                                                                                                                                                                                                                                            |
+| `spells`                | [`Spell[]`](#spell)                                         | An array of [spells](#spell) that this character can cast. This can be either a fully-formed [Spell](#spell) object or an object containing just the name of an SRD spell. **If a name is provided, the spell will be looked up in our database of SRD spells and used regardless of what values are provided in the rest of the inputs.** |
+| `spellcastingAbility`   | `string`                                                    | The character's spellcasting ability name (abbreviated as int, e.g.).                                                                                                                                                                                                                                                                      |
+| `spellFilters`          | `string[]`                                                  | An array of filters to be applied to the character's spellbook whenever it is displayed. These will be overwritten anytime the spellbook is filtered.                                                                                                                                                                                      |
+| `spellSlots`            | [`SpellSlot[]`](#spellslot)                                 | Information about the spell slots for this character.                                                                                                                                                                                                                                                                                      |
+| `systemKey`             | `string`                                                    | The key for the game system that the character is built for (e.g. '5e').                                                                                                                                                                                                                                                                   |
+| `textBlocks`            | [`TextBlockSection[]`](#textblocksection)                   | General purpose text about the character broken into sections of title and body text blocks. Things like class features, racial features, and background features are found here.                                                                                                                                                          |
+| `type`                  | `string`                                                    | The non-player character's type (e.g. Humanoid, Giant, etc.).                                                                                                                                                                                                                                                                              |
+| `typeTags`              | `string[]`                                                  | An array of type tags (or subtypes) applicable to the non-player character (e.g. goblinoid).                                                                                                                                                                                                                                               |
+| `weight`                | `string`                                                    | The character's weight.                                                                                                                                                                                                                                                                                                                    |
 
 ## CharacterDamageAdjustment
 
 ```json
+
 ```
 
 TODO
@@ -1426,6 +1444,7 @@ TODO
 ## Class
 
 ```json
+
 ```
 
 The `Class` object represents a character class and its associated level.
@@ -1435,9 +1454,18 @@ The `Class` object represents a character class and its associated level.
 | `class` | `string` | The name of the character class.                            |
 | `level` | `number` | The number of levels the character has earned in the class. |
 
+## Item
+
+```json
+
+```
+
+TODO
+
 ## MovementMode
 
 ```json
+
 ```
 
 The `MovementMode` object represents a movement mode and its associated speed.
@@ -1445,6 +1473,15 @@ The `MovementMode` object represents a movement mode and its associated speed.
 ## Proficiency
 
 ```json
+
+```
+
+TODO
+
+## Sense
+
+```json
+
 ```
 
 TODO
@@ -1452,6 +1489,7 @@ TODO
 ## SpellSlot
 
 ```json
+
 ```
 
 TODO
