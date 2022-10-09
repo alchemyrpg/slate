@@ -2110,6 +2110,8 @@ The `MovementMode` object represents a movement mode and its associated speed.
 }
 ```
 
+When importing a character with spells, if the name of the spell matches a spell in the SRD, the SRD data will be used. Otherwise, the spell will be imported as a custom spell.
+
 | Attribute                | Type                                      | Description                                                                                                                                                                                            |
 | ------------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `canBeCastAsRitual`      | `boolean`                                 | Whether or not the spell can be cast as a ritual.                                                                                                                                                      |
