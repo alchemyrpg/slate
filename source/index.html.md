@@ -1520,7 +1520,7 @@ To import multiple NPCs, create a JSON file with an object that contains a `char
 
 ```json
 {
-  "rollModifer": "advantage",
+  "rollModifier": "advantage",
   "skillName": "Acrobatics"
 }
 ```
