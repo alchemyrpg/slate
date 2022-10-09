@@ -1346,7 +1346,7 @@ To import a single NPC, create a JSON file with a single [`Character`](#characte
 
 To import multiple NPCs, create a JSON file with an object that contains a `characters` property that contains an array of [`Character`](#character) objects.
 
-| Field        | Type                        | Description                                    |
+| Attribute    | Type                        | Description                                    |
 | ------------ | --------------------------- | ---------------------------------------------- |
 | `characters` | [`Character[]`](#character) | An array of [`Character`](#character) objects. |
 
@@ -1359,10 +1359,10 @@ To import multiple NPCs, create a JSON file with an object that contains a `char
 }
 ```
 
-| Field   | Type     | Description                                                                                                                        |
-| ------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `name`  | `string` | The name of the ability score. For 5e, we use the abbreviation: str, dex, con, int, wis, cha.                                      |
-| `value` | `number` | The ability score's value. The modifier, if appropriate for the game system, will be calculated by the game system implementation. |
+| Attribute | Type     | Description                                                                                                                        |
+| --------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `name`    | `string` | The name of the ability score. For 5e, we use the abbreviation: str, dex, con, int, wis, cha.                                      |
+| `value`   | `number` | The ability score's value. The modifier, if appropriate for the game system, will be calculated by the game system implementation. |
 
 ## Action
 
@@ -1401,7 +1401,7 @@ To import multiple NPCs, create a JSON file with an object that contains a `char
 }
 ```
 
-| Field         | Type                          | Description                                                                                                                                                                             |
+| Attribute     | Type                          | Description                                                                                                                                                                             |
 | ------------- | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `description` | `string`                      | The description of the action, visible to other players when this action is rolled into the journal.                                                                                    |
 | `name`        | `string`                      | The name of the action. This is visible in the actions panel when playing the character and is also used as the title for the card displayed in the journal when this action is rolled. |
@@ -1429,7 +1429,7 @@ To import multiple NPCs, create a JSON file with an object that contains a `char
 }
 ```
 
-| Field             | Type                                                    | Description                                                                                                                      |
+| Attribute         | Type                                                    | Description                                                                                                                      |
 | ----------------- | ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | `type`            | `string`                                                | The type of action step. Supported values are: `message`, `journal-command`, `custom-dice-roll`, `custom-attack`, `skill-check`. |
 | ` journalCommand` | [`ActionStepJournalCommand`](#actionstepjournalcommand) | If this is a `journal-command` ActionStep type, this contains the details of the command to execute.                             |
@@ -1471,7 +1471,7 @@ To import multiple NPCs, create a JSON file with an object that contains a `char
 }
 ```
 
-| Field          | Type                                      | Description                                                                                                                       |
+| Attribute      | Type                                      | Description                                                                                                                       |
 | -------------- | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | `ability`      | `string`                                  | The ability score to use for the attack roll.                                                                                     |
 | `bonus`        | `number`                                  | The bonus to add to the attack roll.                                                                                              |
@@ -1495,7 +1495,7 @@ To import multiple NPCs, create a JSON file with an object that contains a `char
 }
 ```
 
-| Field         | Type     | Description                                                     |
+| Attribute     | Type     | Description                                                     |
 | ------------- | -------- | --------------------------------------------------------------- |
 | `abilityName` | `string` | The ability score to use for the damage roll.                   |
 | `bonus`       | `number` | An arbitrary bonus to add to the damage roll.                   |
@@ -1511,7 +1511,7 @@ To import multiple NPCs, create a JSON file with an object that contains a `char
 }
 ```
 
-| Field     | Type     | Description                                                                                            |
+| Attribute | Type     | Description                                                                                            |
 | --------- | -------- | ------------------------------------------------------------------------------------------------------ |
 | `command` | `string` | The journal slash command to execute. Currently available commands are `/me`, `/roll`, and `/whisper`. |
 | `args`    | `string` | The arguments to pass to the command.                                                                  |
@@ -1525,7 +1525,7 @@ To import multiple NPCs, create a JSON file with an object that contains a `char
 }
 ```
 
-| Field          | Type     | Description                                                                                                 |
+| Attribute      | Type     | Description                                                                                                 |
 | -------------- | -------- | ----------------------------------------------------------------------------------------------------------- |
 | `rollModifier` | `string` | The modifier to apply to the skill check. Currently available modifiers are `advantage` and `disadvantage`. |
 | `skillName`    | `string` | The name of a skill present on the character to roll a skill check for.                                     |
@@ -1894,7 +1894,7 @@ The [`Character`](#character) object represents a player or non-player character
 
 When creating a character for 5d, note that SRD spells can simply be an object with the `name` property set to the name of the spell rather than a full [`Spell`](#spell) object. If the spell name matches an existing SRD spell (case-insensitive), it will be added to the character.
 
-| Field                   | Type                                                        | Description                                                                                                                                                                                                                                                                                                                                |
+| Attribute               | Type                                                        | Description                                                                                                                                                                                                                                                                                                                                |
 | ----------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `abilityScores`         | [`AbilityScore[]`](#abilityscore)                           | The character's ability scores.                                                                                                                                                                                                                                                                                                            |
 | `actions`               | [`Action[]`](#action)                                       | The character's actions.                                                                                                                                                                                                                                                                                                                   |
@@ -1956,7 +1956,7 @@ When creating a character for 5d, note that SRD spells can simply be an object w
 }
 ```
 
-| Field        | Type     | Description                                                                                                                          |
+| Attribute    | Type     | Description                                                                                                                          |
 | ------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | `condition`  | `string` | The condition associated with the damage adjustment (e.g. silvered, magical, etc.). This is only displayed, not a mechanical effect. |
 | `damageType` | `string` | The name of the damage type to adjust (e.g. Slashing, Piercing, etc.).                                                               |
@@ -1972,10 +1972,10 @@ When creating a character for 5d, note that SRD spells can simply be an object w
 
 The `Class` object represents a character class and its associated level.
 
-| Field   | Type     | Description                                                 |
-| ------- | -------- | ----------------------------------------------------------- |
-| `class` | `string` | The name of the character class.                            |
-| `level` | `number` | The number of levels the character has earned in the class. |
+| Attribute | Type     | Description                                                 |
+| --------- | -------- | ----------------------------------------------------------- |
+| `class`   | `string` | The name of the character class.                            |
+| `level`   | `number` | The number of levels the character has earned in the class. |
 
 ## MovementMode
 
@@ -2001,7 +2001,7 @@ The `MovementMode` object represents a movement mode and its associated speed.
 }
 ```
 
-| Field      | Type     | Description                                                    |
+| Attribute  | Type     | Description                                                    |
 | ---------- | -------- | -------------------------------------------------------------- |
 | `distance` | `number` | The distance the character can move in this mode.              |
 | `mode`     | `string` | The name of the movement mode (e.g. `Walking`, `Fly`, `Swim`). |
@@ -2015,7 +2015,7 @@ The `MovementMode` object represents a movement mode and its associated speed.
 }
 ```
 
-| Field             | Type     | Description                                                 |
+| Attribute         | Type     | Description                                                 |
 | ----------------- | -------- | ----------------------------------------------------------- |
 | `abilityName`     | `string` | The name of the ability that this saving throw is based on. |
 | `difficultyClass` | `number` | The difficulty class for this saving throw.                 |
@@ -2029,7 +2029,7 @@ The `MovementMode` object represents a movement mode and its associated speed.
 }
 ```
 
-| Field      | Type     | Description                                                    |
+| Attribute  | Type     | Description                                                    |
 | ---------- | -------- | -------------------------------------------------------------- |
 | `distance` | `number` | The maximum distance at which the sense can be used.           |
 | `name`     | `string` | The name of the sense (e.g. `Darkvision`, `Blindsight`, etc.). |
@@ -2054,7 +2054,7 @@ The `MovementMode` object represents a movement mode and its associated speed.
 }
 ```
 
-| Field               | Type      | Description                                                                                    |
+| Attribute           | Type      | Description                                                                                    |
 | ------------------- | --------- | ---------------------------------------------------------------------------------------------- |
 | `abilityName`       | `string`  | The name of the ability that this skill is based on. For 5e, use the abbreviated ability name. |
 | `bonus`             | `number`  | A bonus to add to the skill roll.                                                              |
@@ -2110,7 +2110,7 @@ The `MovementMode` object represents a movement mode and its associated speed.
 }
 ```
 
-| Field                    | Type                                      | Description                                                                                                                                                                                            |
+| Attribute                | Type                                      | Description                                                                                                                                                                                            |
 | ------------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `canBeCastAsRitual`      | `boolean`                                 | Whether or not the spell can be cast as a ritual.                                                                                                                                                      |
 | `canCastAtHigherLevel`   | `boolean`                                 | Whether or not the spell can be cast at higher levels.                                                                                                                                                 |
@@ -2145,7 +2145,7 @@ The `MovementMode` object represents a movement mode and its associated speed.
 }
 ```
 
-| Field           | Type                                      | Description                                         |
+| Attribute       | Type                                      | Description                                         |
 | --------------- | ----------------------------------------- | --------------------------------------------------- |
 | `applyAtLevels` | `number[]`                                | An array of levels at which this effect is applied. |
 | `damage`        | [`ActionStepDamage[]`](#actionstepdamage) | An array of damage dice rolls.                      |
@@ -2162,7 +2162,7 @@ The `MovementMode` object represents a movement mode and its associated speed.
 
 Describes the max and remaining spell slots for a given level based on its position within an array.
 
-| Field       | Type     | Description                                  |
+| Attribute   | Type     | Description                                  |
 | ----------- | -------- | -------------------------------------------- |
 | `max`       | `number` | The maximum number of spell slots available. |
 | `remaining` | `number` | The number of spell slots remaining.         |
