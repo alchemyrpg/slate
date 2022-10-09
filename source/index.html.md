@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - json
 
 toc_footers:
-  - <a href='https://github.com/alchemyrpg/slate'>❤️ Open-Source</a>
+  - <a href='https://github.com/alchemyrpg/slate'>❤️ Open Source</a>
 
 includes:
   - ogl
@@ -35,8 +35,8 @@ To import a single NPC, create a JSON file with a single `Character` object in i
 
 ### Character
 
-| Field | Type | Description |
-| ----- | ---- | ----------- |
+| Field  | Type     | Description                |
+| ------ | -------- | -------------------------- |
 | `name` | `string` | The name of the character. |
 
 ```json
@@ -334,31 +334,18 @@ To import a single NPC, create a JSON file with a single `Character` object in i
 
 To import multiple NPCs, create a JSON file with an object that contains a `characters` property that contains an array of `Character` objects.
 
-| Field | Type | Description |
-| ----- | ---- | ----------- |
+| Field        | Type          | Description                      |
+| ------------ | ------------- | -------------------------------- |
 | `characters` | `Character[]` | An array of `Character` objects. |
 
 ```json
 {
-  characters: [
+  "characters": [
     {
-      name: "Acolyte"
+      "name": "Acolyte"
     },
     {
-      name: "Adept"
-    }
-  ]
-}
-```
-
-```json
-{
-  characters: [
-    {
-      name: "Acolyte"
-    },
-    {
-      name: "Cultist"
+      "name": "Cultist"
     }
   ]
 }
