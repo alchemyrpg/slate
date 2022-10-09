@@ -1371,6 +1371,361 @@ TODO
 ## Character
 
 ```json
+{
+  "abilityScores": [
+    {
+      "name": "str",
+      "value": 11
+    },
+    {
+      "name": "dex",
+      "value": 14
+    },
+    {
+      "name": "con",
+      "value": 12
+    },
+    {
+      "name": "int",
+      "value": 10
+    },
+    {
+      "name": "wis",
+      "value": 13
+    },
+    {
+      "name": "cha",
+      "value": 14
+    }
+  ],
+  "actions": [
+    {
+      "description": "Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 20/60 ft., one creature. Hit: 4 (1d4 + 2) piercing damage.",
+      "name": "Dagger",
+      "sortOrder": 0,
+      "steps": [
+        {
+          "attack": {
+            "ability": "dex",
+            "crit": 20,
+            "damageRolls": [
+              {
+                "abilityName": "dex",
+                "dice": "1d4",
+                "type": "Piercing"
+              }
+            ],
+            "isProficient": true,
+            "isRanged": false,
+            "name": "Dagger",
+            "savingThrow": {}
+          },
+          "journalCommand": {},
+          "skillCheck": {},
+          "type": "custom-attack"
+        }
+      ]
+    },
+    {
+      "description": "Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 20/60 ft., one creature. Hit: 4 (1d4 + 2) piercing damage.",
+      "name": "Dagger (Thrown)",
+      "sortOrder": 1,
+      "steps": [
+        {
+          "attack": {
+            "ability": "dex",
+            "crit": 20,
+            "damageRolls": [
+              {
+                "abilityName": "dex",
+                "dice": "1d4",
+                "type": "Piercing"
+              }
+            ],
+            "isProficient": true,
+            "isRanged": true,
+            "longRange": 60,
+            "name": "Dagger (Thrown)",
+            "range": 20,
+            "savingThrow": {}
+          },
+          "journalCommand": {},
+          "skillCheck": {},
+          "type": "custom-attack"
+        }
+      ]
+    }
+  ],
+  "alignment": "Any Non-Good Alignment",
+  "armorClass": 13,
+  "armorType": "Leather Armor",
+  "challengeRating": "2",
+  "classes": [
+    {
+      "class": "Monster",
+      "level": 1
+    }
+  ],
+  "currentHp": 33,
+  "exp": 450,
+  "hitDice": "6d8+6",
+  "imageUri": "https://cdn.alchemyrpg.com/app-assets/humanoid-token.svg",
+  "initiativeBonus": 0,
+  "isNPC": true,
+  "isSpellcaster": true,
+  "maxHp": 33,
+  "movementModes": [
+    {
+      "distance": 30,
+      "mode": "Walking"
+    }
+  ],
+  "name": "Cult Fanatic",
+  "proficiencies": [
+    {
+      "name": "Common",
+      "type": "language"
+    }
+  ],
+  "proficiencyBonus": 2,
+  "race": "NPC",
+  "size": "Medium",
+  "skills": [
+    {
+      "abilityName": "dex",
+      "name": "Acrobatics",
+      "proficient": false
+    },
+    {
+      "abilityName": "wis",
+      "name": "Animal Handling",
+      "proficient": false
+    },
+    {
+      "abilityName": "int",
+      "name": "Arcana",
+      "proficient": false
+    },
+    {
+      "abilityName": "str",
+      "name": "Athletics",
+      "proficient": false
+    },
+    {
+      "abilityName": "cha",
+      "name": "Deception",
+      "proficient": true
+    },
+    {
+      "abilityName": "int",
+      "name": "History",
+      "proficient": false
+    },
+    {
+      "abilityName": "wis",
+      "name": "Insight",
+      "proficient": false
+    },
+    {
+      "abilityName": "cha",
+      "name": "Intimidation",
+      "proficient": false
+    },
+    {
+      "abilityName": "int",
+      "name": "Investigation",
+      "proficient": false
+    },
+    {
+      "abilityName": "wis",
+      "name": "Medicine",
+      "proficient": false
+    },
+    {
+      "abilityName": "int",
+      "name": "Nature",
+      "proficient": false
+    },
+    {
+      "abilityName": "wis",
+      "name": "Perception",
+      "proficient": false
+    },
+    {
+      "abilityName": "cha",
+      "name": "Performance",
+      "proficient": false
+    },
+    {
+      "abilityName": "cha",
+      "name": "Persuasion",
+      "proficient": true
+    },
+    {
+      "abilityName": "int",
+      "name": "Religion",
+      "proficient": true
+    },
+    {
+      "abilityName": "dex",
+      "name": "Sleight of Hand",
+      "proficient": false
+    },
+    {
+      "abilityName": "dex",
+      "name": "Stealth",
+      "proficient": false
+    },
+    {
+      "abilityName": "wis",
+      "name": "Survival",
+      "proficient": false
+    }
+  ],
+  "speed": 30,
+  "spellFilters": ["Known"],
+  "spellSlots": [
+    {
+      "max": 4,
+      "remaining": 4
+    },
+    {
+      "max": 3,
+      "remaining": 3
+    },
+    {
+      "max": 0,
+      "remaining": 0
+    },
+    {
+      "max": 0,
+      "remaining": 0
+    },
+    {
+      "max": 0,
+      "remaining": 0
+    },
+    {
+      "max": 0,
+      "remaining": 0
+    },
+    {
+      "max": 0,
+      "remaining": 0
+    },
+    {
+      "max": 0,
+      "remaining": 0
+    },
+    {
+      "max": 0,
+      "remaining": 0
+    }
+  ],
+  "spellcastingAbility": "wis",
+  "spells": [
+    {
+      "name": "Sacred Flame"
+    },
+    {
+      "name": "Thaumaturgy"
+    },
+    {
+      "name": "Command"
+    },
+    {
+      "name": "Shield of Faith"
+    },
+    {
+      "name": "Inflict Wounds"
+    },
+    {
+      "name": "Spiritual Weapon"
+    },
+    {
+      "name": "Light"
+    },
+    {
+      "name": "Hold Person"
+    },
+    {
+      "name": "Sacred Flame"
+    },
+    {
+      "name": "Thaumaturgy"
+    },
+    {
+      "name": "Light"
+    },
+    {
+      "name": "Command"
+    },
+    {
+      "name": "Shield of Faith"
+    },
+    {
+      "name": "Inflict Wounds"
+    },
+    {
+      "name": "Hold Person"
+    },
+    {
+      "name": "Spiritual Weapon"
+    },
+    {
+      "canCastAtHigherLevel": true,
+      "castingTime": "1 Action",
+      "components": ["V", "S"],
+      "damage": [
+        {
+          "dice": "6d6",
+          "type": "Necrotic"
+        }
+      ],
+      "description": "Make a melee spell attack against a creature you can reach. On a hit, the target takes 6d6 necrotic damage.\n\nWhen you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st.",
+      "duration": "Instantaneous",
+      "higherLevelDescription": "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st.",
+      "higherLevels": [
+        {
+          "applyAtLevels": [2],
+          "damage": {
+            "dice": "1d10",
+            "type": "Necrotic"
+          },
+          "type": "per-slot"
+        }
+      ],
+      "level": 1,
+      "name": "Custom Wound Inflictor",
+      "range": "Touch",
+      "rollsAttack": true,
+      "savingThrow": {},
+      "school": "Necromancy",
+      "tags": ["Cleric"]
+    }
+  ],
+  "textBlocks": [
+    {
+      "textBlocks": [
+        {
+          "body": "The fanatic has advantage on saving throws against being charmed or frightened.",
+          "title": "Dark Devotion"
+        },
+        {
+          "body": "The fanatic is a 4th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 11, +3 to hit with spell attacks). The fanatic has the following cleric spells prepared:\nCantrips (at will): light, sacred flame, thaumaturgy\n1st level (4 slots): command, inflict wounds, shield of faith\n2nd level (3 slots): hold person, spiritual weapon",
+          "title": "Spellcasting"
+        },
+        {
+          "body": "The fanatic makes two melee attacks.",
+          "title": "Multiattack"
+        }
+      ],
+      "title": "Abilities"
+    }
+  ],
+  "type": "Humanoid",
+  "typeTags": ["Any Race"]
+}
 
 ```
 
@@ -1479,6 +1834,14 @@ The `MovementMode` object represents a movement mode and its associated speed.
 TODO
 
 ## Sense
+
+```json
+
+```
+
+TODO
+
+## Spell
 
 ```json
 
