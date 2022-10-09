@@ -1,5 +1,5 @@
 ---
-title: Alchemy Developers
+title: Alchemy Developer Documentation
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - json
@@ -16,7 +16,7 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: Alchemy developer documentation
+    content: Alchemy Developer Documentation
 ---
 
 # Introduction
