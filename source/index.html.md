@@ -2035,6 +2035,34 @@ The `MovementMode` object represents a movement mode and its associated speed.
 | `distance` | `number` | The maximum distance at which the sense can be used.           |
 | `name`     | `string` | The name of the sense (e.g. `Darkvision`, `Blindsight`, etc.). |
 
+## Skill
+
+```json
+{
+  "abilityName": "wis",
+  "name": "Perception",
+  "proficient": false
+}
+```
+
+```json
+{
+  "abilityName": "dex",
+  "bonus": 3,
+  "doubleProficiency": true,
+  "name": "Stealth",
+  "proficient": true
+}
+```
+
+| Field               | Type      | Description                                                                                    |
+| ------------------- | --------- | ---------------------------------------------------------------------------------------------- |
+| `abilityName`       | `string`  | The name of the ability that this skill is based on. For 5e, use the abbreviated ability name. |
+| `bonus`             | `number`  | A bonus to add to the skill roll.                                                              |
+| `doubleProficiency` | `boolean` | Whether or not the character has double proficiency (a.k.a. expertise) in this skill.          |
+| `name`              | `string`  | The name of the skill (e.g. `Perception`, `Stealth`, etc.).                                    |
+| `proficient`        | `boolean` | Whether or not the character is proficient in this skill.                                      |
+
 ## Spell
 
 ```json
