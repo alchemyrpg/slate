@@ -1980,14 +1980,6 @@ The `Class` object represents a character class and its associated level.
 ## MovementMode
 
 ```json
-
-```
-
-The `MovementMode` object represents a movement mode and its associated speed.
-
-## Proficiency
-
-```json
 {
   "distance": 40,
   "mode": "Walking"
@@ -2005,6 +1997,22 @@ The `MovementMode` object represents a movement mode and its associated speed.
 | ---------- | -------- | -------------------------------------------------------------- |
 | `distance` | `number` | The distance the character can move in this mode.              |
 | `mode`     | `string` | The name of the movement mode (e.g. `Walking`, `Fly`, `Swim`). |
+
+The `MovementMode` object represents a movement mode and its associated speed.
+
+## Proficiency
+
+```json
+{
+  "name": "Dexterity",
+  "type": "save"
+}
+```
+
+| Attribute | Type     | Description                                                                                                                        |
+| --------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `name`    | `string` | The name of the proficiency.                                                                                                       |
+| `type`    | `string` | The type of proficiency. This is very flexible, but 5e has a few specific ones: `language`, `save`, `weapon`, `tool`, and `armor`. |
 
 ## SavingThrow
 
