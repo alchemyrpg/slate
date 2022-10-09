@@ -2699,10 +2699,7 @@
 <td>The number of levels the character has earned in the class.</td>
 </tr>
 </tbody></table>
-<h2 id='movementmode'>MovementMode</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
-</span></code></pre></div>
-<p>The <code>MovementMode</code> object represents a movement mode and its associated speed.</p>
-<h2 id='proficiency'>Proficiency</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+<h2 id='movementmode'>MovementMode</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span><span class="w">
   </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Walking"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2727,6 +2724,31 @@
 <td><code>mode</code></td>
 <td><code>string</code></td>
 <td>The name of the movement mode (e.g. <code>Walking</code>, <code>Fly</code>, <code>Swim</code>).</td>
+</tr>
+</tbody></table>
+
+<p>The <code>MovementMode</code> object represents a movement mode and its associated speed.</p>
+<h2 id='proficiency'>Proficiency</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dexterity"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"save"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>The name of the proficiency.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>string</code></td>
+<td>The type of proficiency. This is very flexible, but 5e has a few specific ones: <code>language</code>, <code>save</code>, <code>weapon</code>, <code>tool</code>, and <code>armor</code>.</td>
 </tr>
 </tbody></table>
 <h2 id='savingthrow'>SavingThrow</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
