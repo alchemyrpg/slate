@@ -316,13 +316,43 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
-            <a href="#character-import" class="toc-h1 toc-link" data-title="Character Import">Character Import</a>
+            <a href="#character-import" class="toc-h1 toc-link" data-title="Character import">Character import</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#importing-a-single-npc" class="toc-h2 toc-link" data-title="Importing a single NPC">Importing a single NPC</a>
                   </li>
                   <li>
-                    <a href="#importing-multiple-npcs" class="toc-h2 toc-link" data-title="Importing Multiple NPCs">Importing Multiple NPCs</a>
+                    <a href="#importing-multiple-npcs" class="toc-h2 toc-link" data-title="Importing multiple NPCs">Importing multiple NPCs</a>
+                  </li>
+                  <li>
+                    <a href="#abilityscore" class="toc-h2 toc-link" data-title="AbilityScore">AbilityScore</a>
+                  </li>
+                  <li>
+                    <a href="#action" class="toc-h2 toc-link" data-title="Action">Action</a>
+                  </li>
+                  <li>
+                    <a href="#character" class="toc-h2 toc-link" data-title="Character">Character</a>
+                  </li>
+                  <li>
+                    <a href="#characterdamageadjustment" class="toc-h2 toc-link" data-title="CharacterDamageAdjustment">CharacterDamageAdjustment</a>
+                  </li>
+                  <li>
+                    <a href="#class" class="toc-h2 toc-link" data-title="Class">Class</a>
+                  </li>
+                  <li>
+                    <a href="#item" class="toc-h2 toc-link" data-title="Item">Item</a>
+                  </li>
+                  <li>
+                    <a href="#movementmode" class="toc-h2 toc-link" data-title="MovementMode">MovementMode</a>
+                  </li>
+                  <li>
+                    <a href="#proficiency" class="toc-h2 toc-link" data-title="Proficiency">Proficiency</a>
+                  </li>
+                  <li>
+                    <a href="#sense" class="toc-h2 toc-link" data-title="Sense">Sense</a>
+                  </li>
+                  <li>
+                    <a href="#spellslot" class="toc-h2 toc-link" data-title="SpellSlot">SpellSlot</a>
                   </li>
               </ul>
           </li>
@@ -343,32 +373,10 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Alchemy developer documentation! We don&#39;t have a lot available for developers today, but we hope that will change soon. :)</p>
-<h1 id='character-import'>Character Import</h1>
-<p>Alchemy Unlimited provides the ability to import NPCs into a universe that you are an editor of. Today, this is a file-based import process, but we may open up an API for this in the future.</p>
-
-<p>The import process only supports JSON.</p>
-<h2 id='importing-a-single-npc'>Importing a single NPC</h2>
-<p>To import a single NPC, create a JSON file with a single <code>Character</code> object in it.</p>
-<h3 id='character'>Character</h3>
-<p>The <code>Character</code> object represents a player or non-player character on Alchemy. </p>
-
-<p>For 5e characters, the objects in the <code>spells</code> array can either be a fully-formed <code>Spell</code> object or an object with the <code>name</code> property set to the name of an SRD spell. If only the <code>name</code> property is provided, the spell will be looked up in the SRD, and if one exists, it will be added to the character.</p>
-
-<table><thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><code>name</code></td>
-<td><code>string</code></td>
-<td>The name of the character.</td>
-</tr>
-</tbody></table>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+<p>Welcome to the Alchemy developer documentation! Within this document you fill all of the information you need to integrate with Alchemy, including guides, API references, and more.</p>
+<h1 id='character-import'>Character import</h1>
+<p>Alchemy Unlimited provides the ability to import NPCs into any universe that the user can edit. Today, this is a file-based import process, but we may open up an API for this in the future.</p>
+<h2 id='importing-a-single-npc'>Importing a single NPC</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nl">"abilityScores"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -656,23 +664,9 @@
         </span><span class="s2">"Any Race"</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='importing-multiple-npcs'>Importing Multiple NPCs</h2>
-<p>To import multiple NPCs, create a JSON file with an object that contains a <code>characters</code> property that contains an array of <code>Character</code> objects.</p>
-
-<table><thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><code>characters</code></td>
-<td><code>Character[]</code></td>
-<td>An array of <code>Character</code> objects.</td>
-</tr>
-</tbody></table>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span></code></pre></div>
+<p>To import a single NPC, create a JSON file with a single <a href="#character"><code>Character</code></a> object in it.</p>
+<h2 id='importing-multiple-npcs'>Importing multiple NPCs</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"characters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"abilityScores"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -1691,7 +1685,343 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h1 id='ogl'>OGL</h1>
+</span></code></pre></div>
+<p>To import multiple NPCs, create a JSON file with an object that contains a <code>characters</code> property that contains an array of <a href="#character"><code>Character</code></a> objects.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>characters</code></td>
+<td><code>Character[]</code></td>
+<td>An array of <code>Character</code> objects.</td>
+</tr>
+</tbody></table>
+<h2 id='abilityscore'>AbilityScore</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre></div>
+<p>TODO</p>
+<h2 id='action'>Action</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre></div>
+<p>TODO</p>
+<h2 id='character'>Character</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre></div>
+<p>The <a href="#character"><code>Character</code></a> object represents a player or non-player character on Alchemy.</p>
+
+<p>When creating a character for 5d, note that SRD spells can simply be an object with the <code>name</code> property set to the name of the spell rather than a full <a href="#spell"><code>Spell</code></a> object. If the spell name matches an existing SRD spell (case-insensitive), it will be added to the character.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>_id</code></td>
+<td><code>string</code></td>
+<td>The character&#39;s database identifier.</td>
+</tr>
+<tr>
+<td><code>abilityScores</code></td>
+<td><a href="#abilityscore"><code>AbilityScore[]</code></a></td>
+<td>The character&#39;s ability scores.</td>
+</tr>
+<tr>
+<td><code>actions</code></td>
+<td><a href="#action"><code>Action[]</code></a></td>
+<td>The character&#39;s actions.</td>
+</tr>
+<tr>
+<td><code>age</code></td>
+<td><code>string</code></td>
+<td>The character&#39;s age.</td>
+</tr>
+<tr>
+<td><code>alignment</code></td>
+<td><code>string</code></td>
+<td>The character&#39;s alignment.</td>
+</tr>
+<tr>
+<td><code>armorClass</code></td>
+<td><code>number</code></td>
+<td>The character&#39;s armor class including all bonuses.</td>
+</tr>
+<tr>
+<td><code>armorType</code></td>
+<td><code>string</code></td>
+<td>The character&#39;s armor type.</td>
+</tr>
+<tr>
+<td><code>appearance</code></td>
+<td><code>string</code></td>
+<td>A long description of the character&#39;s appearance.</td>
+</tr>
+<tr>
+<td><code>challengeRating</code></td>
+<td><code>string</code></td>
+<td>A non-player character&#39;s challenge rating.</td>
+</tr>
+<tr>
+<td><code>classes</code></td>
+<td><a href="#class"><code>Class[]</code></a></td>
+<td>An array of character classes and their associated levels.</td>
+</tr>
+<tr>
+<td><code>conditionImmunities</code></td>
+<td><code>string[]</code></td>
+<td>A non-player character&#39;s condition immunities.</td>
+</tr>
+<tr>
+<td><code>copper</code></td>
+<td><code>number</code></td>
+<td>The number of copper coins carried by the character.</td>
+</tr>
+<tr>
+<td><code>currentHp</code></td>
+<td><code>number</code></td>
+<td>The character&#39;s current hit points.</td>
+</tr>
+<tr>
+<td><code>damageImmunities</code></td>
+<td><a href="#characterdamageadjustment"><code>CharacterDamageAdjustment[]</code></a></td>
+<td>A non-player character&#39;s damage immunities.</td>
+</tr>
+<tr>
+<td><code>damageResistances</code></td>
+<td><a href="#characterdamageadjustment"><code>CharacterDamageAdjustment[]</code></a></td>
+<td>A non-player character&#39;s damage resistances.</td>
+</tr>
+<tr>
+<td><code>damageVulnerabilities</code></td>
+<td><a href="#characterdamageadjustment"><code>CharacterDamageAdjustment[]</code></a></td>
+<td>A non-player character&#39;s damage vulnerabilities.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>Markdown <code>string</code></td>
+<td>An <a href="https://app.alchemyrpg.com/universe/6260df75b0b47dc841b01d56/article/62faeeae89d4b645be22f85c">Alchemy-flavored markdown</a> description of the character.</td>
+</tr>
+<tr>
+<td><code>electrum</code></td>
+<td><code>number</code></td>
+<td>The number of electrum coins carried by the character.</td>
+</tr>
+<tr>
+<td><code>eyes</code></td>
+<td><code>string</code></td>
+<td>The character&#39;s eye color.</td>
+</tr>
+<tr>
+<td><code>exp</code></td>
+<td><code>number</code></td>
+<td>The amount of experience points that the character has earned.</td>
+</tr>
+<tr>
+<td><code>gold</code></td>
+<td><code>number</code></td>
+<td>The number of gold coins carried by the character.</td>
+</tr>
+<tr>
+<td><code>hair</code></td>
+<td><code>string</code></td>
+<td>The character&#39;s hair color.</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td><code>string</code></td>
+<td>The character&#39;s height.</td>
+</tr>
+<tr>
+<td><code>hitDice</code></td>
+<td><code>string</code></td>
+<td>The character&#39;s hit dice.</td>
+</tr>
+<tr>
+<td><code>imageUri</code></td>
+<td><code>string</code></td>
+<td>A URI for the character&#39;s avatar or profile picture.</td>
+</tr>
+<tr>
+<td><code>initiativeBonus</code></td>
+<td><code>number</code></td>
+<td>The character&#39;s total initiative bonus.</td>
+</tr>
+<tr>
+<td><code>items</code></td>
+<td><a href="#item"><code>Item[]</code></a></td>
+<td>The character&#39;s items.</td>
+</tr>
+<tr>
+<td><code>isBackstoryPublic</code></td>
+<td><code>boolean</code></td>
+<td>Indicates whether the character&#39;s backstory should be visible to other players.</td>
+</tr>
+<tr>
+<td><code>isSpellcaster</code></td>
+<td><code>boolean</code></td>
+<td>Indicates whether this character is a spellcaster or not. This is used to trigger the display of spellcasting features in the UI.</td>
+</tr>
+<tr>
+<td><code>legendary</code></td>
+<td><code>boolean</code></td>
+<td>Indicates whether this character is a legendary creature.</td>
+</tr>
+<tr>
+<td><code>maxHp</code></td>
+<td><code>number</code></td>
+<td>The character&#39;s maximum hit points.</td>
+</tr>
+<tr>
+<td><code>movementModes</code></td>
+<td><a href="#movementmode"><code>MovementMode[]</code></a></td>
+<td>An array of movement modes and their associated speeds.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>The character&#39;s name.</td>
+</tr>
+<tr>
+<td><code>platinum</code></td>
+<td><code>number</code></td>
+<td>The number of platinum coins carried by the character.</td>
+</tr>
+<tr>
+<td><code>proficiencies</code></td>
+<td><a href="#proficiency"><code>Proficiency[]</code></a></td>
+<td>An array of skills, languages, saving throws, etc. that the character is proficient in.</td>
+</tr>
+<tr>
+<td><code>proficiencyBonus</code></td>
+<td><code>number</code></td>
+<td>The character&#39;s proficiency bonus (5e).</td>
+</tr>
+<tr>
+<td><code>race</code></td>
+<td><code>string</code></td>
+<td>The character&#39;s race, lineage, folk, etc.</td>
+</tr>
+<tr>
+<td><code>senses</code></td>
+<td><a href="#sense"><code>Sense[]</code></a></td>
+<td>A non-player character&#39;s senses.</td>
+</tr>
+<tr>
+<td><code>silver</code></td>
+<td><code>number</code></td>
+<td>The number of copper coins carried by the character.</td>
+</tr>
+<tr>
+<td><code>skills</code></td>
+<td><a href="#skill"><code>Skill[]</code></a></td>
+<td>The character&#39;s skills.</td>
+</tr>
+<tr>
+<td><code>skin</code></td>
+<td><code>string</code></td>
+<td>The color of the character&#39;s skin.</td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td><code>string</code></td>
+<td>The character&#39;s size.</td>
+</tr>
+<tr>
+<td><code>speed</code></td>
+<td><code>number</code></td>
+<td>The player character&#39;s movement speed per turn.</td>
+</tr>
+<tr>
+<td><code>spells</code></td>
+<td><a href="#spell"><code>Spell[]</code></a></td>
+<td>An array of <a href="#spell">spells</a> that this character can cast. This can be either a fully-formed <a href="#spell">Spell</a> object or an object containing just the name of an SRD spell. <strong>If a name is provided, the spell will be looked up in our database of SRD spells and used regardless of what values are provided in the rest of the inputs.</strong></td>
+</tr>
+<tr>
+<td><code>spellcastingAbility</code></td>
+<td><code>string</code></td>
+<td>The character&#39;s spellcasting ability name (abbreviated as int, e.g.).</td>
+</tr>
+<tr>
+<td><code>spellFilters</code></td>
+<td><code>string[]</code></td>
+<td>An array of filters to be applied to the character&#39;s spellbook whenever it is displayed. These will be overwritten anytime the spellbook is filtered.</td>
+</tr>
+<tr>
+<td><code>spellSlots</code></td>
+<td><a href="#spellslot"><code>SpellSlot[]</code></a></td>
+<td>Information about the spell slots for this character.</td>
+</tr>
+<tr>
+<td><code>systemKey</code></td>
+<td><code>string</code></td>
+<td>The key for the game system that the character is built for (e.g. &#39;5e&#39;).</td>
+</tr>
+<tr>
+<td><code>textBlocks</code></td>
+<td><a href="#textblocksection"><code>TextBlockSection[]</code></a></td>
+<td>General purpose text about the character broken into sections of title and body text blocks. Things like class features, racial features, and background features are found here.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>string</code></td>
+<td>The non-player character&#39;s type (e.g. Humanoid, Giant, etc.).</td>
+</tr>
+<tr>
+<td><code>typeTags</code></td>
+<td><code>string[]</code></td>
+<td>An array of type tags (or subtypes) applicable to the non-player character (e.g. goblinoid).</td>
+</tr>
+<tr>
+<td><code>weight</code></td>
+<td><code>string</code></td>
+<td>The character&#39;s weight.</td>
+</tr>
+</tbody></table>
+<h2 id='characterdamageadjustment'>CharacterDamageAdjustment</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre></div>
+<p>TODO</p>
+<h2 id='class'>Class</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre></div>
+<p>The <code>Class</code> object represents a character class and its associated level.</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>class</code></td>
+<td><code>string</code></td>
+<td>The name of the character class.</td>
+</tr>
+<tr>
+<td><code>level</code></td>
+<td><code>number</code></td>
+<td>The number of levels the character has earned in the class.</td>
+</tr>
+</tbody></table>
+<h2 id='item'>Item</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre></div>
+<p>TODO</p>
+<h2 id='movementmode'>MovementMode</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre></div>
+<p>The <code>MovementMode</code> object represents a movement mode and its associated speed.</p>
+<h2 id='proficiency'>Proficiency</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre></div>
+<p>TODO</p>
+<h2 id='sense'>Sense</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre></div>
+<p>TODO</p>
+<h2 id='spellslot'>SpellSlot</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre></div>
+<p>TODO</p>
+<h1 id='ogl'>OGL</h1>
 <p>This page contains some JSON snippets that may be subject to the Open Game License, the text of which is provided below.</p>
 <h2 id='open-game-license-version-1-0a'>OPEN GAME LICENSE Version 1.0a</h2>
 <p>The following text is the property of Wizards of the Coast, Inc. and is Copyright 2000 Wizards of the Coast, Inc (&quot;Wizards&quot;). All Rights Reserved.</p>
