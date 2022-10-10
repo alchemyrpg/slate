@@ -1875,7 +1875,7 @@ To import multiple NPCs, create a JSON file with an object that contains a `char
 
 The [`Character`](#character) object represents a player or non-player character on Alchemy.
 
-When creating a character for 5d, note that SRD spells can simply be an object with the `name` property set to the name of the spell rather than a full [`Spell`](#spell) object. If the spell name matches an existing SRD spell (case-insensitive), it will be added to the character.
+When creating a character for 5e, note that SRD spells can simply be an object with the `name` property set to the name of the spell rather than a full [`Spell`](#spell) object. If the spell name matches an existing SRD spell (case-insensitive), it will be added to the character.
 
 | Attribute               | Type                                                        | Description                                                                                                                                                                                                                                                                                                                                |
 | ----------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
