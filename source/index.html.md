@@ -1331,6 +1331,8 @@ To import multiple NPCs, create a JSON file with an object that contains a `char
 | ------------ | --------------------------- | ---------------------------------------------- |
 | `characters` | [`Character[]`](#character) | An array of [`Character`](#character) objects. |
 
+# API Documentation
+
 ## AbilityScore
 
 ```json
