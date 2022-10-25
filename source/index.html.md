@@ -299,7 +299,7 @@ Alchemy Unlimited provides the ability to import NPCs into any universe that the
 }
 ```
 
-To import a single NPC, create a JSON file with a single [`Character`](#character) object in it.
+To import a single NPC, create a JSON file with a single [`Character`](#character) object in it. You can find more examples of single-character imports in the [alchemyrpg/5e-srd](https://github.com/alchemyrpg/5e-srd) repository.
 
 ## Importing multiple NPCs
 
@@ -1325,7 +1325,7 @@ To import a single NPC, create a JSON file with a single [`Character`](#characte
 }
 ```
 
-To import multiple NPCs, create a JSON file with an object that contains a `characters` property that contains an array of [`Character`](#character) objects.
+To import multiple NPCs, create a JSON file with an object that contains a `characters` property that contains an array of [`Character`](#character) objects. You can find more examples of bulk character imports in the [alchemyrpg/5e-srd](https://github.com/alchemyrpg/5e-srd) repository.
 
 | Attribute    | Type                        | Description                                    |
 | ------------ | --------------------------- | ---------------------------------------------- |
