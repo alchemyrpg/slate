@@ -1663,6 +1663,63 @@ To import multiple NPCs, create a JSON file with an object that contains a `char
   "initiativeBonus": 0,
   "isNPC": true,
   "isSpellcaster": true,
+  "itemsWithActions": [
+    {
+      "actions": [
+        {
+          "description": "Attack with dagger",
+          "name": "Stab",
+          "sortOrder": 1,
+          "steps": [
+            {
+              "attack": {
+                "ability": "dex",
+                "bonus": 1,
+                "crit": 20,
+                "damageRolls": [
+                  {
+                    "abilityName": "dex",
+                    "dice": "1d4",
+                    "type": "Piercing"
+                  }
+                ],
+                "isProficient": true,
+                "isRanged": false,
+                "name": "Stab",
+                "rollsAttack": true,
+                "savingThrow": {}
+              },
+              "journalCommand": {},
+              "skillCheck": {},
+              "type": "custom-attack"
+            }
+          ]
+        }
+      ],
+      "item": {
+        "cost": "2",
+        "description": "Proficiency with a dagger allows you to add your proficiency bonus to the attack roll for any attack you make with it.",
+        "isEquipped": true,
+        "name": "Dagger",
+        "quantity": 1,
+        "rarity": "Common",
+        "requiresAttunement": false,
+        "weight": 1
+      }
+    },
+    {
+      "item": {
+        "cost": "2",
+        "description": "A backpack is a leather pack carried on the back, typically with straps to secure it. A backpack can hold 1 cubic foot/ 30 pounds of gear.\n\nYou can also strap items, such as a bedroll or a coil of rope, to the outside of a backpack.",
+        "isEquipped": false,
+        "name": "Backpack",
+        "quantity": 1,
+        "rarity": "Common",
+        "requiresAttunement": false,
+        "weight": 5
+      }
+    }
+  ],
   "maxHp": 33,
   "movementModes": [
     {
@@ -1967,6 +2024,7 @@ When creating a character for 5e, note that SRD spells can simply be an object w
 | `initiativeBonus`       | `number`                                                    | The character's total initiative bonus.                                                                                                                                                                                                                                                                                                    |
 | `isBackstoryPublic`     | `boolean`                                                   | Indicates whether the character's backstory should be visible to other players.                                                                                                                                                                                                                                                            |
 | `isSpellcaster`         | `boolean`                                                   | Indicates whether this character is a spellcaster or not. This is used to trigger the display of spellcasting features in the UI.                                                                                                                                                                                                          |
+| `itemsWithActions`      | [`ExportedItem[]`](#exporteditem)                             | An array of objects containing an item and the items actions.                                                                                                                                                                                                                                                                              |
 | `legendary`             | `boolean`                                                   | Indicates whether this character is a legendary creature.                                                                                                                                                                                                                                                                                  |
 | `maxHp`                 | `number`                                                    | The character's maximum hit points.                                                                                                                                                                                                                                                                                                        |
 | `movementModes`         | [`MovementMode[]`](#movementmode)                           | An array of movement modes and their associated speeds.                                                                                                                                                                                                                                                                                    |
@@ -2019,6 +2077,59 @@ When creating a character for 5e, note that SRD spells can simply be an object w
 | --------- | -------- | ----------------------------------------------------------- |
 | `class`   | `string` | The name of the character class.                            |
 | `level`   | `number` | The number of levels the character has earned in the class. |
+
+## ExportedItem
+
+```json
+{
+  "actions": [
+    {
+      "description": "Attack with dagger",
+      "name": "Stab",
+      "sortOrder": 1,
+      "steps": [
+        {
+          "attack": {
+            "ability": "dex",
+            "bonus": 1,
+            "crit": 20,
+            "damageRolls": [
+              {
+                "abilityName": "dex",
+                "dice": "1d4",
+                "type": "Piercing"
+              }
+            ],
+            "isProficient": true,
+            "isRanged": false,
+            "name": "Stab",
+            "rollsAttack": true,
+            "savingThrow": {}
+          },
+          "journalCommand": {},
+          "skillCheck": {},
+          "type": "custom-attack"
+        }
+      ]
+    }
+  ],
+  "item": {
+    "cost": "2",
+    "description": "Proficiency with a dagger allows you to add your proficiency bonus to the attack roll for any attack you make with it.",
+    "isEquipped": true,
+    "name": "Dagger",
+    "quantity": 1,
+    "rarity": "Common",
+    "requiresAttunement": false,
+    "weight": 1
+  }
+}
+```
+
+| Attribute | Type                  | Description                                               |
+| --------- | --------------------- | --------------------------------------------------------- |
+| `item`    | `Item`                | The item object.                                          |
+| `actions` | [`Action[]`](#action) | An array of actions that can be performed with this item. |
 
 ## MovementMode
 
