@@ -95,14 +95,11 @@ Alchemy Unlimited provides the ability to import NPCs into any universe that the
       "level": 1
     }
   ],
-  "currentHp": 9,
-  "exp": 50,
   "hitDice": "2d8",
   "imageUri": "https://cdn.alchemyrpg.com/app-assets/humanoid-token.svg",
   "initiativeBonus": 0,
   "isNPC": true,
   "isSpellcaster": true,
-  "maxHp": 9,
   "movementModes": [
     {
       "distance": 30,
@@ -295,7 +292,23 @@ Alchemy Unlimited provides the ability to import NPCs into any universe that the
     }
   ],
   "type": "Humanoid",
-  "typeTags": ["Any Race"]
+  "typeTags": ["Any Race"],
+  "trackers": [
+    {
+      "color": "Yellow",
+      "max": 355000,
+      "name": "XP",
+      "type": "Bar",
+      "value": 900
+    },
+    {
+      "color": "Green",
+      "max": 20,
+      "name": "HP",
+      "type": "Bar",
+      "value": 20
+    }
+  ]
 }
 ```
 
@@ -884,7 +897,23 @@ To import a single NPC, create a JSON file with a single [`Character`](#characte
           "title": "Abilities"
         }
       ],
-      "type": "Celestial"
+      "type": "Celestial",
+      "trackers": [
+        {
+          "color": "Yellow",
+          "max": 355000,
+          "name": "XP",
+          "type": "Bar",
+          "value": 900
+        },
+        {
+          "color": "Green",
+          "max": 20,
+          "name": "HP",
+          "type": "Bar",
+          "value": 20
+        }
+      ]
     },
     {
       "abilityScores": [
@@ -1319,7 +1348,23 @@ To import a single NPC, create a JSON file with a single [`Character`](#characte
         }
       ],
       "type": "Monstrosity",
-      "typeTags": ["Titan"]
+      "typeTags": ["Titan"],
+      "trackers": [
+        {
+          "color": "Yellow",
+          "max": 355000,
+          "name": "XP",
+          "type": "Bar",
+          "value": 900
+        },
+        {
+          "color": "Green",
+          "max": 20,
+          "name": "HP",
+          "type": "Bar",
+          "value": 20
+        }
+      ]
     }
   ]
 }
@@ -1869,7 +1914,23 @@ To import multiple NPCs, create a JSON file with an object that contains a `char
     }
   ],
   "type": "Humanoid",
-  "typeTags": ["Any Race"]
+  "typeTags": ["Any Race"],
+  "trackers": [
+    {
+      "color": "Yellow",
+      "max": 355000,
+      "name": "XP",
+      "type": "Bar",
+      "value": 900
+    },
+    {
+      "color": "Green",
+      "max": 20,
+      "name": "HP",
+      "type": "Bar",
+      "value": 20
+    }
+  ]
 }
 ```
 
@@ -1926,6 +1987,7 @@ When creating a character for 5e, note that SRD spells can simply be an object w
 | `spellSlots`            | [`SpellSlot[]`](#spellslot)                                 | Information about the spell slots for this character.                                                                                                                                                                                                                                                                                      |
 | `systemKey`             | `string`                                                    | The key for the game system that the character is built for (e.g. '5e').                                                                                                                                                                                                                                                                   |
 | `textBlocks`            | [`TextBlockSection[]`](#textblocksection)                   | General purpose text about the character broken into sections of title and body text blocks. Things like class features, racial features, and background features are found here.                                                                                                                                                          |
+| `trackers`              | [`Tracker[]`](#tracker)                                     | An array of trackers for the character.                                                                                                                                                                                                                                                                                                    |
 | `type`                  | `string`                                                    | The non-player character's type (e.g. Humanoid, Giant, etc.).                                                                                                                                                                                                                                                                              |
 | `typeTags`              | `string[]`                                                  | An array of type tags (or subtypes) applicable to the non-player character (e.g. goblinoid).                                                                                                                                                                                                                                               |
 | `weight`                | `string`                                                    | The character's weight.                                                                                                                                                                                                                                                                                                                    |
@@ -2228,3 +2290,23 @@ Describes the max and remaining spell slots for a given level based on its posit
 | ------------ | --------------------------- | ---------------------------------------------- |
 | `textBlocks` | [`TextBlock[]`](#textblock) | An array of [`TextBlock`](#textblock) objects. |
 | `title`      | `string`                    | The title of the section.                      |
+
+## Tracker
+
+```json
+{
+  "color": "Green",
+  "max": 20,
+  "name": "HP",
+  "type": "Bar",
+  "value": 20
+}
+```
+
+| Attribute | Type     | Description                                                                                                          |
+| --------- | -------- | -------------------------------------------------------------------------------------------------------------------- |
+| `color`   | `string` | The color of the tracker bar. Valid options are `'Blue'`, `'Green'`, `'Orange'`, `'Purple'`, `'Red'`, and `'Yellow'` |
+| `max`     | `number` | The maximum value for the tracker.                                                                                   |
+| `name`    | `string` | The name displayed on the tracker.                                                                                   |
+| `type`    | `string` | The type of tracker (`'Bar'` or `'Pip'`).                                                                            |
+| `value`   | `number` | The tracker's current value.                                                                                         |
