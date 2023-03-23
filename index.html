@@ -399,6 +399,9 @@
                   <li>
                     <a href="#textblocksection" class="toc-h2 toc-link" data-title="TextBlockSection">TextBlockSection</a>
                   </li>
+                  <li>
+                    <a href="#tracker" class="toc-h2 toc-link" data-title="Tracker">Tracker</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -486,14 +489,11 @@
       </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"currentHp"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"exp"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
   </span><span class="nl">"hitDice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2d8"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"imageUri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.alchemyrpg.com/app-assets/humanoid-token.svg"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"initiativeBonus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"isNPC"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"isSpellcaster"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"maxHp"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
   </span><span class="nl">"movementModes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"distance"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
@@ -686,7 +686,23 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Humanoid"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"typeTags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Any Race"</span><span class="p">]</span><span class="w">
+  </span><span class="nl">"typeTags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Any Race"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"trackers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yellow"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">355000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XP"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bar"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">900</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Green"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HP"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bar"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>To import a single NPC, create a JSON file with a single <a href="#character"><code>Character</code></a> object in it. You can find more examples of single-character imports in the <a href="https://github.com/alchemyrpg/5e-srd">alchemyrpg/5e-srd</a> repository.</p>
@@ -1270,7 +1286,23 @@
           </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Abilities"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Celestial"</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Celestial"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trackers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yellow"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">355000</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XP"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bar"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">900</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Green"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HP"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bar"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"abilityScores"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -1705,7 +1737,23 @@
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monstrosity"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"typeTags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Titan"</span><span class="p">]</span><span class="w">
+      </span><span class="nl">"typeTags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Titan"</span><span class="p">],</span><span class="w">
+      </span><span class="nl">"trackers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yellow"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">355000</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XP"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bar"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">900</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Green"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HP"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bar"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2382,7 +2430,23 @@
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Humanoid"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"typeTags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Any Race"</span><span class="p">]</span><span class="w">
+  </span><span class="nl">"typeTags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Any Race"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"trackers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yellow"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">355000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XP"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bar"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">900</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Green"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HP"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bar"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>The <a href="#character"><code>Character</code></a> object represents a player or non-player character on Alchemy.</p>
@@ -2630,6 +2694,11 @@
 <td><code>textBlocks</code></td>
 <td><a href="#textblocksection"><code>TextBlockSection[]</code></a></td>
 <td>General purpose text about the character broken into sections of title and body text blocks. Things like class features, racial features, and background features are found here.</td>
+</tr>
+<tr>
+<td><code>trackers</code></td>
+<td><a href="#tracker"><code>Tracker[]</code></a></td>
+<td>An array of trackers for the character.</td>
 </tr>
 <tr>
 <td><code>type</code></td>
@@ -3126,6 +3195,47 @@
 <td><code>title</code></td>
 <td><code>string</code></td>
 <td>The title of the section.</td>
+</tr>
+</tbody></table>
+<h2 id='tracker'>Tracker</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Green"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HP"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bar"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>color</code></td>
+<td><code>string</code></td>
+<td>The color of the tracker bar. Valid options are <code>&#39;Blue&#39;</code>, <code>&#39;Green&#39;</code>, <code>&#39;Orange&#39;</code>, <code>&#39;Purple&#39;</code>, <code>&#39;Red&#39;</code>, and <code>&#39;Yellow&#39;</code></td>
+</tr>
+<tr>
+<td><code>max</code></td>
+<td><code>number</code></td>
+<td>The maximum value for the tracker.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>The name displayed on the tracker.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>string</code></td>
+<td>The type of tracker (<code>&#39;Bar&#39;</code> or <code>&#39;Pip&#39;</code>).</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>number</code></td>
+<td>The tracker&#39;s current value.</td>
 </tr>
 </tbody></table>
 <h1 id='ogl'>OGL</h1>
