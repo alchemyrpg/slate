@@ -1491,8 +1491,8 @@ To import multiple NPCs, create a JSON file with an object that contains a `char
 
 ```json
 {
-  "actionType": "Bonus Action",
   "ability": "str",
+  "actionType": "Bonus Action",
   "crit": 20,
   "damageRolls": [
     {
@@ -1511,7 +1511,7 @@ To import multiple NPCs, create a JSON file with an object that contains a `char
 | Attribute      | Type                                      | Description                                                                                                                       |
 | -------------- | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | `ability`      | `string`                                  | The ability score to use for the attack roll.                                                                                     |
-| `actionType`   | `string`                                  | The action type of attack. Supported values are: `Action`, `Bonus Action`, `Reaction`. |                                                                                                                    
+| `actionType`   | `string`                                  | The action type of the attack. Supported values are: `Action`, `Bonus Action`, `Reaction`. |                                                                                                              
 | `bonus`        | `number`                                  | The bonus to add to the attack roll.                                                                                              |
 | `crit`         | `number`                                  | The number at which this attack is considered a critical hit.                                                                     |
 | `damageRolls`  | [`ActionStepDamage[]`](#actionstepdamage) | An array of [`ActionStepDamage`](#actionstepdamage) objects that describe the damage to roll.                                     |
